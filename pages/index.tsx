@@ -1,26 +1,21 @@
-import Container from '../components/container'
-import MoreStories from '../components/more-stories'
-import HeroPost from '../components/hero-post'
-import Intro from '../components/intro'
-import Layout from '../components/layout'
-import { getAllPosts } from '../lib/api'
-import Head from 'next/head'
-import { CMS_NAME } from '../lib/constants'
-import Post from '../interfaces/post'
+import Container from "../components/container";
+import MoreStories from "../components/more-stories";
+import HeroPost from "../components/hero-post";
+import Intro from "../components/intro";
+import Layout from "../components/layout";
+import { getAllPosts } from "../lib/api";
+import Post from "../interfaces/post";
 
 type Props = {
-  allPosts: Post[]
-}
+  allPosts: Post[];
+};
 
 export default function Index({ allPosts }: Props) {
-  const heroPost = allPosts[0]
-  const morePosts = allPosts.slice(1)
+  const heroPost = allPosts[0];
+  const morePosts = allPosts;
   return (
     <>
       <Layout>
-        <Head>
-          <title>{`Next.js Blog Example with ${CMS_NAME}`}</title>
-        </Head>
         <Container>
           <Intro />
           {heroPost && (
@@ -37,20 +32,40 @@ export default function Index({ allPosts }: Props) {
         </Container>
       </Layout>
     </>
-  )
+  );
 }
 
-export const getStaticProps = async () => {
-  const allPosts = getAllPosts([
-    'title',
-    'date',
-    'slug',
-    'author',
-    'coverImage',
-    'excerpt',
-  ])
+export const getStaticProps = () => {
+  // Dummy data for allPosts
+  const allPosts = [
+    {
+      title: "Exploring the Future of Technology",
+      date: "2023-12-25",
+      slug: "future-of-tech",
+      author: "Jane Doe",
+      coverImage: "tech-future-cover.jpg",
+      excerpt: "An in-depth look at emerging technologies shaping our world.",
+    },
+    {
+      title: "The Evolution of Artificial Intelligence",
+      date: "2023-12-20",
+      slug: "ai-evolution",
+      author: "John Smith",
+      coverImage: "ai-evolution-cover.jpg",
+      excerpt:
+        "Exploring the milestones in AI development and future prospects.",
+    },
+    {
+      title: "Sustainable Energy Solutions for the 21st Century",
+      date: "2023-12-18",
+      slug: "sustainable-energy",
+      author: "Alice Johnson",
+      coverImage: "sustainable-energy-cover.jpg",
+      excerpt: "A comprehensive look at green energy alternatives.",
+    },
+  ];
 
   return {
     props: { allPosts },
-  }
-}
+  };
+};
