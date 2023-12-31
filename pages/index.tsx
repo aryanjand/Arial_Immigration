@@ -1,35 +1,36 @@
 import Container from "../components/container";
-import MoreStories from "../components/more-stories";
+import Services from "../components/services";
 import HeroPost from "../components/hero-post";
 import Intro from "../components/intro";
 import Layout from "../components/layout";
 import Post from "../interfaces/post";
 import heroImage from "../public/assets/images/hero/heroCost.png";
+import HeaderLink from "../interfaces/headerlink";
 
 type Props = {
   allPosts: Post[];
+  headerLinks: HeaderLink[];
 };
 
-export default function Index({ allPosts }: Props) {
+export default function Index({ allPosts, headerLinks }: Props) {
   const heroPost = allPosts[0];
   const morePosts = allPosts;
   return (
     <>
       <Layout>
         <Container>
-          <Intro />
+          <Intro headerLinks={headerLinks} />
           {heroPost && (
             <HeroPost
               title={heroPost.title}
               coverImage={heroPost.coverImage}
               date={heroPost.date}
               author={heroPost.author}
-              slug={heroPost.slug}
               excerpt={heroPost.excerpt}
             />
           )}
           {morePosts.length > 0 && (
-            <MoreStories posts={morePosts.slice(1, morePosts.length)} />
+            <Services posts={morePosts.slice(1, morePosts.length)} />
           )}
         </Container>
       </Layout>
@@ -82,7 +83,22 @@ export const getStaticProps = () => {
     },
   ];
 
+  const headerLinks = [
+    {
+      title: "About Us",
+      slug: "future-of-tech",
+    },
+    {
+      title: "Services",
+      slug: "future-of-tech",
+    },
+    {
+      title: "Insight",
+      slug: "future-of-tech",
+    },
+  ];
+
   return {
-    props: { allPosts },
+    props: { allPosts, headerLinks },
   };
 };
