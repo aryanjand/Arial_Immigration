@@ -44,7 +44,6 @@ export const getStaticProps = () => {
     {
       title: "Unlock the doors to new horizons",
       date: "2023-12-25",
-      slug: "future-of-tech",
       author: "Jane Doe",
       coverImage: heroImage,
       excerpt: `We pave your path to Canada, embracing a world without borders.
@@ -54,7 +53,6 @@ export const getStaticProps = () => {
     {
       title: "Study",
       date: "2023-12-20",
-      slug: "ai-evolution",
       author: "John Smith",
       coverImage: heroImage,
       excerpt: `Embark on an educational journey with Arial Immigration.
@@ -64,7 +62,6 @@ export const getStaticProps = () => {
     {
       title: "Work",
       date: "2023-12-18",
-      slug: "sustainable-energy",
       author: "Alice Johnson",
       coverImage: heroImage,
       excerpt: `Transform Canada into your new workspace with Arial Immigration.
@@ -74,7 +71,6 @@ export const getStaticProps = () => {
     {
       title: "Sponsor",
       date: "2023-12-18",
-      slug: "sustainable-energy",
       author: "Alice Johnson",
       coverImage: heroImage,
       excerpt: `Reunite with your loved ones in Canada through Arial Immigration.
@@ -86,15 +82,15 @@ export const getStaticProps = () => {
   const headerLinks = [
     {
       title: "About Us",
-      slug: "future-of-tech",
+      slug: "about-us",
     },
     {
       title: "Services",
-      slug: "future-of-tech",
+      slug: "services",
     },
     {
       title: "Insight",
-      slug: "future-of-tech",
+      slug: "insight",
     },
   ];
 
