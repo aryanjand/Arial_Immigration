@@ -14,8 +14,8 @@ const Intro = ({ headerLinks }: Props) => {
       {headerLinks.map((sn) => (
         <Link
           key={sn.slug}
-          href="/posts/[slug]"
-          as={`/posts/${sn.slug}`}
+          href="/header-link/[slug]"
+          as={`/header-link/${sn.slug}`}
           className="hover:underline"
         >
           {sn.title}
