@@ -110,10 +110,6 @@ export async function getStaticProps() {
       slug: "about-us",
     },
     {
-      title: "Contact Us",
-      slug: "contact-us",
-    },
-    {
       title: "Services",
       slug: "services",
     },
