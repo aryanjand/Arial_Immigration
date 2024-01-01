@@ -24,7 +24,7 @@ export default function Post({ post, headerLinks }: Props) {
   }
 
   return (
-    <Layout /* preview={preview} - Remove or define `preview` */>
+    <Layout>
       <Container>
         <Header headerLinks={headerLinks} slug={post.slug} />
         {router.isFallback ? (
@@ -49,21 +49,51 @@ export async function getStaticProps() {
       title: `Embark on a Journey of New Beginnings`,
       excerpt: `As a proud member of the ICCRC (Immigration Consultants of Canada Regulatory Council), Arial Immigration is dedicated to providing genuine, transparent consultation services. We uphold the highest standards of integrity in all our dealings.
       Guided by our esteemed Managing Director, Mr. Yashpal Jand, a Regulated Canadian Immigration Consultant (RCIC), we ensure our clients are always updated with the latest immigration laws and procedures.`,
-      coverImage: ``,
+      coverImage: "",
     },
     {
-      title: ``,
+      title: "",
       excerpt: `Our commitment to your journey is reflected in our comprehensive support, from initial profile assessment to offering tailored solutions that enhance your career prospects.
       At Arial Immigration, customer satisfaction is not just a goal, it's our promise. We address every query with a deep understanding of your emotional and financial considerations.
       Our consultancy is built on the pillars of honesty, consistency, and strict client confidentiality, making us a trusted partner in your immigration journey.`,
-      coverImage: ``,
+      coverImage: "",
     },
     {
-      title: ``,
+      title: "",
       excerpt: `As ICCRC-certified consultants, we adhere to rigorous standards set by the Canadian government to regulate immigration, citizenship, and international student advising services.
       Our role includes enforcing the Code of Professional Ethics, accrediting Immigration Practitioner Programs, administering Full Skills Exams, delivering Practice Management Education, and ensuring continual professional development.
       Trust Arial Immigration to guide you through every step of your immigration process with expertise and care.`,
       coverImage: rcic_cric,
+    },
+    {
+      title: `Values`,
+      excerpt: `Imagine living in one of the world's most picturesque countries, with a thriving economy and advanced amenities. Arial Immigration invites you to turn your dream of a new life in Canada into reality. Experience the beauty of becoming a Permanent Resident in this magnificent land.`,
+      coverImage: "",
+    },
+    {
+      subHeading: `Integrity:`,
+      excerpt: `At Arial Immigration, integrity is at the core of our interactions and business approach. We maintain unwavering standards of reliability in every aspect of our work, ensuring trust and confidence in all our relationships.`,
+      coverImage: "",
+    },
+    {
+      subHeading: `Reliability:`,
+      excerpt: `Our commitment to being reasonable, honest, courteous, and professional guides our interactions with clients. We support you throughout your immigration journey with dependable and sincere services.`,
+      coverImage: "",
+    },
+    {
+      subHeading: `Our Team:`,
+      excerpt: `Our employees are the backbone of Arial Immigration. We are dedicated to fair and effective recruitment, development, and motivation in a supportive environment. This commitment enables us to achieve excellence in our services.`,
+      coverImage: "",
+    },
+    {
+      subHeading: `Customer Satisfaction:`,
+      excerpt: `Exceeding customer expectations is our benchmark. At Arial Immigration, we are committed to building enduring customer relationships by continuously improving the quality and services we offer, seizing every opportunity to enhance your experience.`,
+      coverImage: "",
+    },
+    {
+      subHeading: `Continuous Learning:`,
+      excerpt: `Excellence is our constant pursuit. We are committed to continuous self-improvement, ensuring that our team is always equipped to provide superior services to our clients and the community.`,
+      coverImage: "",
     },
   ];
 
