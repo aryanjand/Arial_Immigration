@@ -4,8 +4,9 @@ import HeroPost from "../components/hero-post";
 import Intro from "../components/intro";
 import Layout from "../components/layout";
 import Post from "../interfaces/post";
-import heroImage from "../public/assets/images/hero/heroCost.png";
+import heroImage from "../public/assets/images/hero/hero-maple-leaf.png";
 import HeaderLink from "../interfaces/headerlink";
+import ContactUs from "../components/contact-us";
 
 type Props = {
   allPosts: Post[];
@@ -32,6 +33,7 @@ export default function Index({ allPosts, headerLinks }: Props) {
           {morePosts.length > 0 && (
             <Services posts={morePosts.slice(1, morePosts.length)} />
           )}
+          <ContactUs />
         </Container>
       </Layout>
     </>
@@ -82,6 +84,10 @@ export const getStaticProps = () => {
   const headerLinks = [
     {
       title: "About Us",
+      slug: "about-us",
+    },
+    {
+      title: "Contact Us",
       slug: "about-us",
     },
     {
