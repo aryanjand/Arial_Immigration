@@ -8,7 +8,7 @@ type ContentType = {
   ogImage: {
     url: string;
   };
-  content: string;
+  content: ContentType[];
 };
 
 export default ContentType;
