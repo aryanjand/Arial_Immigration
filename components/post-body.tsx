@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ContentType from "../interfaces/post";
+import ContentType from "../interfaces/content-type";
 import cn from "classnames";
 
 type Props = {

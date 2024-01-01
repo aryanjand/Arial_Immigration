@@ -3,7 +3,7 @@ import Services from "../components/services";
 import HeroPost from "../components/hero-post";
 import Intro from "../components/intro";
 import Layout from "../components/layout";
-import Post from "../interfaces/post";
+import Post from "../interfaces/content-type";
 import heroImage from "../public/assets/images/hero/hero-maple-leaf.png";
 import HeaderLink from "../interfaces/headerlink";
 import ContactUs from "../components/contact-us";
