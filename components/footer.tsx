@@ -1,28 +1,70 @@
 import Container from "./container";
-import { EXAMPLE_PATH } from "../lib/constants";
+import Image from "next/image";
+import rcic from "../public/assets/images/certifications/rcic-cicc-capic-accpi.png";
 
 const Footer = () => {
   return (
     <footer className="bg-neutral-50 border-t border-neutral-200">
       <Container>
-        <div className="py-28 flex flex-col lg:flex-row items-center">
-          <h3 className="text-4xl lg:text-[2.5rem] font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            Statically Generated with Next.js.
-          </h3>
-          <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
+        <div className="py-28 grid lg:grid-cols-4 justify-center items-center gap-5">
+          <div>
+            <h3 className="font-bold">Accreditations</h3>
+            <p>Regulated Canadian Immigration Consultant (RCIC)</p>
+            <p> Member in good standing of ICCRC</p>
+            <p> Member of the CAPIC</p>
+          </div>
+          <div>
+            <h3 className="font-bold">Important Links</h3>
             <a
-              href="https://nextjs.org/docs/basic-features/pages"
-              className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
+              href={
+                "https://college-ic.ca/protecting-the-public/find-an-immigration-consultant"
+              }
+              target="true"
+              className="hover:underline block"
             >
-              Read Documentation
+              Verify RCIC
             </a>
             <a
-              href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
-              className="mx-3 font-bold hover:underline"
+              href={
+                "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/submit-profile.html"
+              }
+              target="true"
+              className="hover:underline block"
             >
-              View on GitHub
+              Latest CRS Score
+            </a>
+            <a
+              href={
+                "https://ircc.canada.ca/english/immigrate/skilled/crs-tool.asp"
+              }
+              target="true"
+              className="hover:underline block"
+            >
+              CRS Calculator
+            </a>
+            <a
+              href={
+                "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/check-processing-times.html"
+              }
+              target="true"
+              className="hover:underline block"
+            >
+              Check Processing Time
             </a>
           </div>
+          <div>
+            <h3 className="font-bold">Contact Us</h3>
+            <a href="tel:+16043686092" className="hover:underline block">
+              +1 (604) 368-6092
+            </a>
+            <a
+              href="mailto:arialimmagtion@gmail.com "
+              className="hover:underline block"
+            >
+              arialimmagtion@gmail.com{" "}
+            </a>
+          </div>
+          <Image src={rcic} alt={`Image for rcic logo`} width={350} />
         </div>
       </Container>
     </footer>
