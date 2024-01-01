@@ -8,7 +8,7 @@ import Layout from "../../components/layout";
 import PostTitle from "../../components/post-title";
 import type ContentType from "../../interfaces/content-type";
 import CoverImage from "../../public/assets/images/hero/hero-about-us.png";
-import rcic_cric from "../../public/assets/images/hero/rcic-cric.png";
+import rcic_cric from "../../public/assets/images/certifications/rcic-cric.png";
 import HeaderLink from "../../interfaces/headerlink";
 
 type Props = {
