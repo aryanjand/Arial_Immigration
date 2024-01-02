@@ -28,6 +28,7 @@ const ServiceBody = ({ content, index }: Props) => {
             <>
               {content.coverImage && (
                 <Image
+                  className={"hover:shadow-lg transition-shadow duration-200"}
                   src={content.coverImage}
                   alt={content.title}
                   width={600}
@@ -49,7 +50,8 @@ const ServiceBody = ({ content, index }: Props) => {
                 <p className="self-center">{content.excerpt}</p>
               </article>
               {content.coverImage && (
-                <Image
+                  <Image
+                  className={"hover:shadow-lg transition-shadow duration-200"}
                   src={content.coverImage}
                   alt={content.title}
                   width={600}
