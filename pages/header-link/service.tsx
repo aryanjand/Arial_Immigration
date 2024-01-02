@@ -1,15 +1,20 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Container from "../../components/container";
-import PostBody from "../../components/post-body";
 import Header from "../../components/header";
 import PostHeader from "../../components/post-header";
 import Layout from "../../components/layout";
 import PostTitle from "../../components/post-title";
 import type ContentType from "../../interfaces/content-type";
 import CoverImage from "../../public/assets/images/hero/hero-services.png";
-import rcic_cric from "../../public/assets/images/certifications/rcic-cric.png";
+import study_image from "../../public/assets/images/services/study.png";
+import vist_image from "../../public/assets/images/services/vistor-visa.png";
+import work_image from "../../public/assets/images/services/work.png";
+import lmia_image from "../../public/assets/images/services/lmia.png";
+import citizenship_image from "../../public/assets/images/services/citizenship.png";
+import express_image from "../../public/assets/images/services/express-entry.png";
 import HeaderLink from "../../interfaces/headerlink";
+import ServiceBody from "../../components/service-body";
 
 type Props = {
   post: ContentType;
@@ -32,10 +37,9 @@ export default function Service({ post, headerLinks }: Props) {
         ) : (
           <article className="mb-32">
             <PostHeader title={post.title} coverImage={post.coverImage} />
-            {/* {post.content.map((c) => ( 
-              <PostBody content={c} />
-             ))}
-          */}
+            {post.content.map((c, index) => (
+              <ServiceBody key={c.coverImage} content={c} index={index} />
+            ))}
           </article>
         )}
       </Container>
@@ -47,54 +51,78 @@ export default function Service({ post, headerLinks }: Props) {
 export async function getStaticProps() {
   const content = [
     {
-      title: `Embark on a Journey of New Beginnings`,
-      excerpt: `As a proud member of the ICCRC (Immigration Consultants of Canada Regulatory Council), Arial Immigration is dedicated to providing genuine, transparent consultation services. We uphold the highest standards of integrity in all our dealings.
-      Guided by our esteemed Managing Director, Mr. Yashpal Jand, a Regulated Canadian Immigration Consultant (RCIC), we ensure our clients are always updated with the latest immigration laws and procedures.`,
+      title: `Why Choose Arial Immigration?`,
+      excerpt: `At Arial Immigration, we're known for our exceptional service quality, deeply rooted in client satisfaction and a results-focused approach.
+      Our expert team, proficient in Canadian immigration law, delivers tailored, comprehensive guidance for each client's unique needs.
+      We boast a strong success record, thanks to our meticulous case handling and proactive strategies.
+`,
       coverImage: "",
     },
     {
       title: "",
-      excerpt: `Our commitment to your journey is reflected in our comprehensive support, from initial profile assessment to offering tailored solutions that enhance your career prospects.
-      At Arial Immigration, customer satisfaction is not just a goal, it's our promise. We address every query with a deep understanding of your emotional and financial considerations.
-      Our consultancy is built on the pillars of honesty, consistency, and strict client confidentiality, making us a trusted partner in your immigration journey.`,
+      excerpt: `Our ICCRC affiliation reflects our commitment to ethical and professional standards. 
+      Keeping up-to-date with immigration policy changes, we offer the latest, most effective advice.
+      We're more than a service provider; we're your trusted partner in achieving your Canadian dream, ensuring a smooth journey with our transparency, reliability, and dedication to continuous learning.`,
+      coverImage: "",
+    },
+    {
+      title: `Our Services`,
+      excerpt: ``,
       coverImage: "",
     },
     {
       title: "",
-      excerpt: `As ICCRC-certified consultants, we adhere to rigorous standards set by the Canadian government to regulate immigration, citizenship, and international student advising services.
-      Our role includes enforcing the Code of Professional Ethics, accrediting Immigration Practitioner Programs, administering Full Skills Exams, delivering Practice Management Education, and ensuring continual professional development.
-      Trust Arial Immigration to guide you through every step of your immigration process with expertise and care.`,
-      coverImage: rcic_cric,
+      subHeading: "Study Visa",
+      excerpt: `Choose Canada for its world-class education and vibrant campus life. 
+      Arial Immigration expertly guides students to Canadian universities, matching their aspirations with the right courses and institutions.
+      Benefit from innovative research opportunities and a safe, inclusive community. Plus, enjoy the unique advantage of working while studying.
+      Start your global career with Arial Immigration.`,
+      coverImage: study_image,
     },
     {
-      title: `Values`,
-      excerpt: `Imagine living in one of the world's most picturesque countries, with a thriving economy and advanced amenities. Arial Immigration invites you to turn your dream of a new life in Canada into reality. Experience the beauty of becoming a Permanent Resident in this magnificent land.`,
-      coverImage: "",
+      title: "",
+      subHeading: "Visitor Visa",
+      excerpt: `Choose Canada for its world-class education and vibrant campus life. 
+      Arial Immigration expertly guides students to Canadian universities, matching their aspirations with the right courses and institutions.
+      Benefit from innovative research opportunities and a safe, inclusive community. Plus, enjoy the unique advantage of working while studying.
+      Start your global career with Arial Immigration.`,
+      coverImage: vist_image,
     },
     {
-      subHeading: `Integrity:`,
-      excerpt: `At Arial Immigration, integrity is at the core of our interactions and business approach. We maintain unwavering standards of reliability in every aspect of our work, ensuring trust and confidence in all our relationships.`,
-      coverImage: "",
+      title: "",
+      subHeading: "Work Visa",
+      excerpt: `Choose Canada for its world-class education and vibrant campus life. 
+      Arial Immigration expertly guides students to Canadian universities, matching their aspirations with the right courses and institutions.
+      Benefit from innovative research opportunities and a safe, inclusive community. Plus, enjoy the unique advantage of working while studying.
+      Start your global career with Arial Immigration.`,
+      coverImage: work_image,
     },
     {
-      subHeading: `Reliability:`,
-      excerpt: `Our commitment to being reasonable, honest, courteous, and professional guides our interactions with clients. We support you throughout your immigration journey with dependable and sincere services.`,
-      coverImage: "",
+      title: "",
+      subHeading: "LMIA (Labour Market Impact Assessment)",
+      excerpt: `Choose Canada for its world-class education and vibrant campus life. 
+      Arial Immigration expertly guides students to Canadian universities, matching their aspirations with the right courses and institutions.
+      Benefit from innovative research opportunities and a safe, inclusive community. Plus, enjoy the unique advantage of working while studying.
+      Start your global career with Arial Immigration.`,
+      coverImage: lmia_image,
     },
     {
-      subHeading: `Our Team:`,
-      excerpt: `Our employees are the backbone of Arial Immigration. We are dedicated to fair and effective recruitment, development, and motivation in a supportive environment. This commitment enables us to achieve excellence in our services.`,
-      coverImage: "",
+      title: "",
+      subHeading: "Citizenship",
+      excerpt: `Choose Canada for its world-class education and vibrant campus life. 
+      Arial Immigration expertly guides students to Canadian universities, matching their aspirations with the right courses and institutions.
+      Benefit from innovative research opportunities and a safe, inclusive community. Plus, enjoy the unique advantage of working while studying.
+      Start your global career with Arial Immigration.`,
+      coverImage: citizenship_image,
     },
     {
-      subHeading: `Customer Satisfaction:`,
-      excerpt: `Exceeding customer expectations is our benchmark. At Arial Immigration, we are committed to building enduring customer relationships by continuously improving the quality and services we offer, seizing every opportunity to enhance your experience.`,
-      coverImage: "",
-    },
-    {
-      subHeading: `Continuous Learning:`,
-      excerpt: `Excellence is our constant pursuit. We are committed to continuous self-improvement, ensuring that our team is always equipped to provide superior services to our clients and the community.`,
-      coverImage: "",
+      title: "",
+      subHeading: "Express Entry",
+      excerpt: `Choose Canada for its world-class education and vibrant campus life. 
+      Arial Immigration expertly guides students to Canadian universities, matching their aspirations with the right courses and institutions.
+      Benefit from innovative research opportunities and a safe, inclusive community. Plus, enjoy the unique advantage of working while studying.
+      Start your global career with Arial Immigration.`,
+      coverImage: express_image,
     },
   ];
 
