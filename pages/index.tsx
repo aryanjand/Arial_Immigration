@@ -5,6 +5,9 @@ import Intro from "../components/intro";
 import Layout from "../components/layout";
 import Post from "../interfaces/content-type";
 import heroImage from "../public/assets/images/hero/hero-maple-leaf.png";
+import work_image from "../public/assets/images/services/work-hero.png";
+import study_image from "../public/assets/images/services/study-hero.png";
+import sponsor_image from "../public/assets/images/services/sponsor.png";
 import HeaderLink from "../interfaces/headerlink";
 import ContactUs from "../components/contact-us";
 
@@ -56,7 +59,7 @@ export const getStaticProps = () => {
       title: "Study",
       date: "2023-12-20",
       author: "John Smith",
-      coverImage: heroImage,
+      coverImage: study_image,
       excerpt: `Embark on an educational journey with Arial Immigration.
         Elevate your learning experience beyond borders and immerse yourself in Canada's rich academic environment.
          We provide comprehensive assistance for students aspiring to study in Canada, equipping them for global career opportunities.`,
@@ -65,7 +68,7 @@ export const getStaticProps = () => {
       title: "Work",
       date: "2023-12-18",
       author: "Alice Johnson",
-      coverImage: heroImage,
+      coverImage: work_image,
       excerpt: `Transform Canada into your new workspace with Arial Immigration.
        Our tailored assistance programs are designed to facilitate your smooth transition to a thriving career in Canada.
        Let us guide you in navigating the path to successful migration and professional growth.`,
@@ -74,7 +77,7 @@ export const getStaticProps = () => {
       title: "Sponsor",
       date: "2023-12-18",
       author: "Alice Johnson",
-      coverImage: heroImage,
+      coverImage: sponsor_image,
       excerpt: `Reunite with your loved ones in Canada through Arial Immigration.
        We specialize in various Sponsorship Visas, making it possible for your family and relatives to join you and explore life in Canada.
        Let us help you bring your dear ones closer in this exciting new chapter.`,
