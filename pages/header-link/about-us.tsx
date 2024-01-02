@@ -16,7 +16,7 @@ type Props = {
   headerLinks: HeaderLink[];
 };
 
-export default function Post({ post, headerLinks }: Props) {
+export default function AboutUs({ post, headerLinks }: Props) {
   const router = useRouter();
 
   if (!router.isFallback && !post?.slug) {
@@ -111,7 +111,7 @@ export async function getStaticProps() {
     },
     {
       title: "Services",
-      slug: "services",
+      slug: "service",
     },
     {
       title: "Insight",

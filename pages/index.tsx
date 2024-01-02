@@ -88,7 +88,7 @@ export const getStaticProps = () => {
     },
     {
       title: "Services",
-      slug: "services",
+      slug: "service",
     },
     {
       title: "Insight",
