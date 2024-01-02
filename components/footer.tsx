@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-neutral-50 border-t border-neutral-200">
       <Container>
-        <div className="py-28 grid lg:grid-cols-4 justify-center items-center gap-5">
+        <div className="py-28 grid lg:grid-cols-4 justify-center items-start gap-5">
           <div>
             <h3 className="font-bold">Accreditations</h3>
             <p>Regulated Canadian Immigration Consultant (RCIC)</p>
