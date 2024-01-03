@@ -6,7 +6,7 @@ import PostHeader from "../../components/post-header";
 import Layout from "../../components/layout";
 import PostTitle from "../../components/post-title";
 import type ContentType from "../../interfaces/content-type";
-import CoverImage from "../../public/assets/images/hero/hero-services.png";
+import CoverImage from "../../public/assets/images/hero/hero-insight.png";
 import HeaderLink from "../../interfaces/headerlink";
 import InsightBody from "../../components/insight-body";
 const news = require("gnews");
