@@ -33,7 +33,7 @@ export default function Insight({ post, headerLinks }: Props) {
           <>
             <PostHeader title={post.title} coverImage={post.coverImage} />
             <h3 className="text-4xl font-light">Latest Immigration</h3>
-            <div className="grid grid-cols-3 gap-5 mb-32">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-32">
               {post.newsContent.map((c) => (
                 <InsightBody content={c} />
               ))}
@@ -47,7 +47,7 @@ export default function Insight({ post, headerLinks }: Props) {
 // If you need to fetch the post data statically, use getStaticProps
 // This is just an example. Modify according to your data fetching logic.
 export async function getStaticProps() {
-  const immigrationNews = await news.search("Canadian Immigration CIC", {
+  const immigrationNews = await news.search("Good Canadian Immigration CIC", {
     n: 6,
   });
 
