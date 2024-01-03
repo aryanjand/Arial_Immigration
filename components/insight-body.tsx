@@ -22,7 +22,7 @@ const InsightBody = ({ content }: Props) => {
       <h2 className="text-2xl font-light">{content.title}</h2>
       <>
         <article className="flex flex-col gap-3">
-          <p className="self-center">{content.contentSnippet}</p>
+          <p>{content.contentSnippet}</p>
         </article>
       </>
       <a
