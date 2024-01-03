@@ -82,46 +82,43 @@ export async function getStaticProps() {
     {
       title: "",
       subHeading: "Visitor Visa",
-      excerpt: `Choose Canada for its world-class education and vibrant campus life. 
-      Arial Immigration expertly guides students to Canadian universities, matching their aspirations with the right courses and institutions.
-      Benefit from innovative research opportunities and a safe, inclusive community. Plus, enjoy the unique advantage of working while studying.
-      Start your global career with Arial Immigration.`,
+      excerpt: `Discover the beauty and diversity of Canada with Arial Immigration's Visitor Visa assistance.
+      Whether it's for tourism, family visits, or short-term business trips, we ensure a smooth, hassle-free visa application process.
+      Experience Canada's stunning landscapes, multicultural cities, and warm hospitality.
+      Let Arial Immigration be your gateway to unforgettable Canadian adventures.`,
       coverImage: vist_image,
     },
     {
       title: "",
       subHeading: "Work Visa",
-      excerpt: `Choose Canada for its world-class education and vibrant campus life. 
-      Arial Immigration expertly guides students to Canadian universities, matching their aspirations with the right courses and institutions.
-      Benefit from innovative research opportunities and a safe, inclusive community. Plus, enjoy the unique advantage of working while studying.
-      Start your global career with Arial Immigration.`,
+      excerpt: `Turn your professional aspirations into reality in Canada with Arial Immigration's Work Visa assistance.
+       We provide expert guidance for securing work visas, connecting you with Canada's diverse job market.
+        Whether you're seeking career advancement or new opportunities, Canada offers a dynamic work environment and a high quality of life.
+       Begin your professional journey in Canada confidently with Arial Immigration's personalized support.`,
       coverImage: work_image,
     },
     {
       title: "",
       subHeading: "LMIA (Labour Market Impact Assessment)",
-      excerpt: `Choose Canada for its world-class education and vibrant campus life. 
-      Arial Immigration expertly guides students to Canadian universities, matching their aspirations with the right courses and institutions.
-      Benefit from innovative research opportunities and a safe, inclusive community. Plus, enjoy the unique advantage of working while studying.
-      Start your global career with Arial Immigration.`,
+      excerpt: `Arial Immigration provides expert assistance with Labour Market Impact Assessments (LMIA), a crucial step for employers in Canada to hire foreign workers.
+       We guide you through the LMIA process, ensuring compliance with Canadian labor market requirements and facilitating a smoother path for securing work visas. 
+      Our expertise in LMIA helps bridge the gap between Canadian employers and international talent, paving the way for successful employment opportunities in Canada.`,
       coverImage: lmia_image,
     },
     {
       title: "",
       subHeading: "Citizenship",
-      excerpt: `Choose Canada for its world-class education and vibrant campus life. 
-      Arial Immigration expertly guides students to Canadian universities, matching their aspirations with the right courses and institutions.
-      Benefit from innovative research opportunities and a safe, inclusive community. Plus, enjoy the unique advantage of working while studying.
-      Start your global career with Arial Immigration.`,
+      excerpt: `Arial Immigration is dedicated to helping you navigate the journey to Canadian citizenship.
+       We provide comprehensive support and guidance through the application process, ensuring you meet all the requirements and understand the rights and responsibilities of Canadian citizenship.
+       Our expertise simplifies the path to becoming a Canadian citizen, allowing you to fully embrace the opportunities and privileges of life in Canada.`,
       coverImage: citizenship_image,
     },
     {
       title: "",
       subHeading: "Express Entry",
-      excerpt: `Choose Canada for its world-class education and vibrant campus life. 
-      Arial Immigration expertly guides students to Canadian universities, matching their aspirations with the right courses and institutions.
-      Benefit from innovative research opportunities and a safe, inclusive community. Plus, enjoy the unique advantage of working while studying.
-      Start your global career with Arial Immigration.`,
+      excerpt: `Arial Immigration specializes in the Express Entry system, Canada's streamlined pathway for skilled immigrants.
+       We provide expert guidance to optimize your profile and improve your chances of selection. From eligibility assessment to final application, our team ensures a smooth, efficient process, helping you fast-track your move to Canada.
+       Trust Arial Immigration to navigate the Express Entry system and bring you closer to your Canadian dream.`,
       coverImage: express_image,
     },
   ];
