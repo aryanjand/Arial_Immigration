@@ -1,3 +1,5 @@
+import NewsType from "./news";
+
 type ContentType = {
   author?: any;
   date?: any;
@@ -10,6 +12,7 @@ type ContentType = {
     url?: string;
   };
   content?: ContentType[];
+  newsContent?: NewsType[];
 };
 
 export default ContentType;
