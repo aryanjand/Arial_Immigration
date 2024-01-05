@@ -54,8 +54,7 @@ export async function getStaticProps() {
       title: `Why Choose Arial Immigration?`,
       excerpt: `At Arial Immigration, we're known for our exceptional service quality, deeply rooted in client satisfaction and a results-focused approach.
       Our expert team, proficient in Canadian immigration law, delivers tailored, comprehensive guidance for each client's unique needs.
-      We boast a strong success record, thanks to our meticulous case handling and proactive strategies.
-`,
+      We boast a strong success record, thanks to our meticulous case handling and proactive strategies.`,
       coverImage: "",
     },
     {
