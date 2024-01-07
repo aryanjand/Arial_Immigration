@@ -21,9 +21,7 @@ const HeroPost = ({ title, coverImage, date, excerpt, author }: Props) => {
       </div>
       <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
         <div>
-          <h3 className="mb-4 text-4xl lg:text-5xl leading-tight hover:underline">
-            {title}
-          </h3>
+          <h3 className="mb-4 text-4xl lg:text-5xl leading-tight">{title}</h3>
           <div className="mb-4 md:mb-0 text-lg">
             <DateFormatter dateString={date} />
           </div>
