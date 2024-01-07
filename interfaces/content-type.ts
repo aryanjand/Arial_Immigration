@@ -6,6 +6,7 @@ type ContentType = {
   slug?: string;
   title?: string;
   subHeading?: string;
+  heading?: string;
   coverImage?: string;
   excerpt?: string;
   ogImage?: {
