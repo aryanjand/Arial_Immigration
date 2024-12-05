@@ -29,7 +29,7 @@ const ServiceBody = ({ content, index }: Props) => {
               ? "grid-cols-2"
               : "grid-cols-1", // add content.coverImage && screenSize <= 768px
             "items-center",
-            "gap-4",
+            "gap-4"
           )}
         >
           {index % 2 === 0 && screenSize.width >= 768 ? ( // add screenSize <= 768px
@@ -39,7 +39,7 @@ const ServiceBody = ({ content, index }: Props) => {
                   className={cn(
                     "hover:shadow-lg",
                     "transition-shadow",
-                    "duration-200",
+                    "duration-200"
                   )}
                   src={content.coverImage}
                   alt={content.title}

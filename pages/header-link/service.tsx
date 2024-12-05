@@ -51,14 +51,12 @@ export default function Service({ post, headerLinks }: Props) {
 export async function getStaticProps() {
   const content = [
     {
-      title: `Why Choose Arial Immigration?`,
       excerpt: `At Arial Immigration, we're known for our exceptional service quality, deeply rooted in client satisfaction and a results-focused approach.
       Our expert team, proficient in Canadian immigration law, delivers tailored, comprehensive guidance for each client's unique needs.
       We boast a strong success record, thanks to our meticulous case handling and proactive strategies.`,
       coverImage: "",
     },
     {
-      title: "",
       excerpt: `Our ICCRC affiliation reflects our commitment to ethical and professional standards. 
       Keeping up-to-date with immigration policy changes, we offer the latest, most effective advice.
       We're more than a service provider; we're your trusted partner in achieving your Canadian dream, ensuring a smooth journey with our transparency, reliability, and dedication to continuous learning.`,
@@ -70,7 +68,6 @@ export async function getStaticProps() {
       coverImage: "",
     },
     {
-      title: "",
       subHeading: "Study Visa",
       excerpt: `Choose Canada for its world-class education and vibrant campus life. 
       Arial Immigration expertly guides students to Canadian universities, matching their aspirations with the right courses and institutions.
@@ -79,7 +76,6 @@ export async function getStaticProps() {
       coverImage: study_image,
     },
     {
-      title: "",
       subHeading: "Visitor Visa",
       excerpt: `Discover the beauty and diversity of Canada with Arial Immigration's Visitor Visa assistance.
       Whether it's for tourism, family visits, or short-term business trips, we ensure a smooth, hassle-free visa application process.
@@ -88,7 +84,6 @@ export async function getStaticProps() {
       coverImage: vist_image,
     },
     {
-      title: "",
       subHeading: "Work Visa",
       excerpt: `Turn your professional aspirations into reality in Canada with Arial Immigration's Work Visa assistance.
        We provide expert guidance for securing work visas, connecting you with Canada's diverse job market.
@@ -97,7 +92,6 @@ export async function getStaticProps() {
       coverImage: work_image,
     },
     {
-      title: "",
       subHeading: "LMIA (Labour Market Impact Assessment)",
       excerpt: `Arial Immigration provides expert assistance with Labour Market Impact Assessments (LMIA), a crucial step for employers in Canada to hire foreign workers.
        We guide you through the LMIA process, ensuring compliance with Canadian labor market requirements and facilitating a smoother path for securing work visas. 
@@ -105,7 +99,6 @@ export async function getStaticProps() {
       coverImage: lmia_image,
     },
     {
-      title: "",
       subHeading: "Citizenship",
       excerpt: `Arial Immigration is dedicated to helping you navigate the journey to Canadian citizenship.
        We provide comprehensive support and guidance through the application process, ensuring you meet all the requirements and understand the rights and responsibilities of Canadian citizenship.
@@ -113,7 +106,6 @@ export async function getStaticProps() {
       coverImage: citizenship_image,
     },
     {
-      title: "",
       subHeading: "Express Entry",
       excerpt: `Arial Immigration specializes in the Express Entry system, Canada's streamlined pathway for skilled immigrants.
        We provide expert guidance to optimize your profile and improve your chances of selection. From eligibility assessment to final application, our team ensures a smooth, efficient process, helping you fast-track your move to Canada.

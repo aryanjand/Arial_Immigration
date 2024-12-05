@@ -1,13 +1,11 @@
-import PostPreview from "./post-preview";
+import ServicesPreview from "./services-preview";
 import type Post from "../interfaces/content-type";
-import useScreenSize from "../hooks/useScreenSize";
 
 type Props = {
   posts: Post[];
 };
 
 const Services = ({ posts }: Props) => {
-  const screenSize = useScreenSize();
   return (
     <section>
       <h2 className="mb-8 text-5xl md:text-7xl font-bold tracking-tighter leading-tight">
@@ -19,12 +17,10 @@ const Services = ({ posts }: Props) => {
         }
       >
         {posts.map((post) => (
-          <PostPreview
+          <ServicesPreview
             key={post.slug}
             title={post.title}
             coverImage={post.coverImage}
-            date={post.date}
-            author={post.author}
             excerpt={post.excerpt}
           />
         ))}

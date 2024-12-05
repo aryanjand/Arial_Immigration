@@ -29,7 +29,6 @@ export default function Index({ allPosts, headerLinks }: Props) {
               title={heroPost.title}
               coverImage={heroPost.coverImage}
               date={heroPost.date}
-              author={heroPost.author}
               excerpt={heroPost.excerpt}
             />
           )}
@@ -44,12 +43,9 @@ export default function Index({ allPosts, headerLinks }: Props) {
 }
 
 export const getStaticProps = () => {
-  // Dummy data for allPosts
   const allPosts = [
     {
       title: "Unlock the doors to new horizons",
-      date: "2023-12-25",
-      author: "Jane Doe",
       coverImage: heroImage,
       excerpt: `We pave your path to Canada, embracing a world without borders.
         Committed to guiding you through each step, we help you seize opportunities, acquire skills, and forge a future in a global landscape. 
@@ -57,8 +53,6 @@ export const getStaticProps = () => {
     },
     {
       title: "Study",
-      date: "2023-12-20",
-      author: "John Smith",
       coverImage: study_image,
       excerpt: `Embark on an educational journey with Arial Immigration.
         Elevate your learning experience beyond borders and immerse yourself in Canada's rich academic environment.
@@ -66,8 +60,6 @@ export const getStaticProps = () => {
     },
     {
       title: "Work",
-      date: "2023-12-18",
-      author: "Alice Johnson",
       coverImage: work_image,
       excerpt: `Transform Canada into your new workspace with Arial Immigration.
        Our tailored assistance programs are designed to facilitate your smooth transition to a thriving career in Canada.
@@ -75,8 +67,6 @@ export const getStaticProps = () => {
     },
     {
       title: "Sponsor",
-      date: "2023-12-18",
-      author: "Alice Johnson",
       coverImage: sponsor_image,
       excerpt: `Reunite with your loved ones in Canada through Arial Immigration.
        We specialize in various Sponsorship Visas, making it possible for your family and relatives to join you and explore life in Canada.

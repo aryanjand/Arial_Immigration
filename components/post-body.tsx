@@ -5,7 +5,7 @@ import cn from "classnames";
 type Props = {
   content: ContentType;
 };
-
+// Used in the about-us page
 const PostBody = ({ content }: Props) => {
   return (
     <>
