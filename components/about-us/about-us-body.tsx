@@ -1,19 +1,19 @@
-import Image from "next/image";
-import ContentType from "../interfaces/content-type";
-import cn from "classnames";
+import Image from 'next/image';
+import ContentType from '../../interfaces/content-type';
+import cn from 'classnames';
 
 type Props = {
   content: ContentType;
 };
 // Used in the about-us page
-const PostBody = ({ content }: Props) => {
+const AboutUsBody = ({ content }: Props) => {
   return (
     <>
       <div
-        className={cn("max-w-6xl", "mx-auto", "grid grid-flow-row", {
-          "gap-5 mt-10": content.title,
-          "gap-1": content.subHeading,
-          "gap-3": !content.title && !content.subHeading,
+        className={cn('max-w-6xl', 'mx-auto', 'grid grid-flow-row', {
+          'gap-5 mt-10': content.title,
+          'gap-1': content.subHeading,
+          'gap-3': !content.title && !content.subHeading,
         })}
       >
         {content.title ? (
@@ -24,7 +24,7 @@ const PostBody = ({ content }: Props) => {
 
         <div
           className={`grid ${
-            content.coverImage ? "grid-cols-3" : "grid-cols-1"
+            content.coverImage ? 'grid-cols-3' : 'grid-cols-1'
           } items-center gap-4`}
         >
           {content.coverImage && (
@@ -35,11 +35,11 @@ const PostBody = ({ content }: Props) => {
               height={630}
             />
           )}
-          <p className="self-center col-span-2">{content.excerpt}</p>
+          <p className="self-center col-span-2">{content.description}</p>
         </div>
       </div>
     </>
   );
 };
 
-export default PostBody;
+export default AboutUsBody;

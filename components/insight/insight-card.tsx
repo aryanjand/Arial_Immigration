@@ -1,22 +1,22 @@
-import cn from "classnames";
-import NewsType from "../interfaces/news";
+import cn from 'classnames';
+import NewsType from '../../interfaces/news';
 
 type Props = {
   content: NewsType;
 };
 
-const InsightBody = ({ content }: Props) => {
+const InsightCard = ({ content }: Props) => {
   return (
     <div
       className={cn(
-        "max-w-6xl",
-        "mx-auto",
-        "grid grid-flow-row",
-        "gap-5 mt-10",
-        "hover:shadow-lg",
-        "transition-shadow",
-        "duration-200",
-        "p-5",
+        'max-w-6xl',
+        'mx-auto',
+        'grid grid-flow-row',
+        'gap-5 mt-10',
+        'hover:shadow-lg',
+        'transition-shadow',
+        'duration-200',
+        'p-5'
       )}
     >
       <h2 className="text-2xl font-light">{content.title}</h2>
@@ -50,4 +50,4 @@ const InsightBody = ({ content }: Props) => {
   );
 };
 
-export default InsightBody;
+export default InsightCard;

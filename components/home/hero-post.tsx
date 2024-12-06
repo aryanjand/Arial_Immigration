@@ -1,12 +1,12 @@
-import CoverImage from "./cover-image";
+import CoverImage from '../shared/cover-image';
 
 type Props = {
   title: string;
   coverImage: string;
-  excerpt: string;
+  description: string;
 };
 
-const HeroPost = ({ title, coverImage, excerpt }: Props) => {
+const HeroPost = ({ title, coverImage, description }: Props) => {
   return (
     <section>
       <div className="mb-8 md:mb-16">
@@ -17,7 +17,7 @@ const HeroPost = ({ title, coverImage, excerpt }: Props) => {
           <h3 className="mb-4 text-4xl lg:text-5xl leading-tight">{title}</h3>
         </div>
         <div>
-          <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
+          <p className="text-lg leading-relaxed mb-4">{description}</p>
         </div>
       </div>
     </section>

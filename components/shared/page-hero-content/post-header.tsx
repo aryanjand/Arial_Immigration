@@ -1,5 +1,5 @@
-import CoverImage from "./cover-image";
-import PostTitle from "./post-title";
+import CoverImage from '../cover-image';
+import PageTitle from './page-title';
 
 type Props = {
   title: string;
@@ -9,7 +9,7 @@ type Props = {
 const PostHeader = ({ title, coverImage }: Props) => {
   return (
     <>
-      <PostTitle>{title}</PostTitle>
+      <PageTitle>{title}</PageTitle>
       <div className="mb-8 md:mb-16 sm:mx-0">
         <CoverImage title={title} src={coverImage} width={1300} />
       </div>

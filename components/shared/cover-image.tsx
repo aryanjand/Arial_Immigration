@@ -1,5 +1,5 @@
-import Link from "next/link";
-import Image from "next/image";
+import Link from 'next/link';
+import Image from 'next/image';
 
 type Props = {
   title: string;
@@ -14,7 +14,7 @@ const CoverImage = ({ title, src, slug, width, height }: Props) => {
     <Image
       src={src}
       alt={`Cover Image for ${title}`}
-      className={"hover:shadow-lg transition-shadow duration-200 w-full"}
+      className={'hover:shadow-lg transition-shadow duration-200 w-full'}
       width={width ? width : 1300}
       height={height ? height : 630}
     />

@@ -1,7 +1,7 @@
-import Image from "next/image";
-import ContentType from "../interfaces/content-type";
-import cn from "classnames";
-import useScreenSize from "../hooks/useScreenSize";
+import Image from 'next/image';
+import ContentType from '../../interfaces/content-type';
+import cn from 'classnames';
+import useScreenSize from '../../hooks/useScreenSize';
 
 type Props = {
   content: ContentType;
@@ -13,9 +13,9 @@ const ServiceBody = ({ content, index }: Props) => {
   return (
     <>
       <div
-        className={cn("max-w-6xl", "mx-auto", "grid grid-flow-row", {
-          "gap-5 mt-10": content.title,
-          "my-5": screenSize.width < 768,
+        className={cn('max-w-6xl', 'mx-auto', 'grid grid-flow-row', {
+          'gap-5 mt-10': content.title,
+          'my-5': screenSize.width < 768,
         })}
       >
         {content.title && (
@@ -24,12 +24,12 @@ const ServiceBody = ({ content, index }: Props) => {
 
         <div
           className={cn(
-            "grid",
+            'grid',
             content.coverImage && screenSize.width >= 768
-              ? "grid-cols-2"
-              : "grid-cols-1", // add content.coverImage && screenSize <= 768px
-            "items-center",
-            "gap-4"
+              ? 'grid-cols-2'
+              : 'grid-cols-1', // add content.coverImage && screenSize <= 768px
+            'items-center',
+            'gap-4'
           )}
         >
           {index % 2 === 0 && screenSize.width >= 768 ? ( // add screenSize <= 768px
@@ -37,9 +37,9 @@ const ServiceBody = ({ content, index }: Props) => {
               {content.coverImage && (
                 <Image
                   className={cn(
-                    "hover:shadow-lg",
-                    "transition-shadow",
-                    "duration-200"
+                    'hover:shadow-lg',
+                    'transition-shadow',
+                    'duration-200'
                   )}
                   src={content.coverImage}
                   alt={content.title}
@@ -50,7 +50,7 @@ const ServiceBody = ({ content, index }: Props) => {
                 <h4 className="font-bold text-lg underline">
                   {content.subHeading}
                 </h4>
-                <p className="self-center">{content.excerpt}</p>
+                <p className="self-center">{content.description}</p>
               </article>
             </>
           ) : (
@@ -59,11 +59,11 @@ const ServiceBody = ({ content, index }: Props) => {
                 <h4 className="font-bold text-lg underline">
                   {content.subHeading}
                 </h4>
-                <p className="self-center">{content.excerpt}</p>
+                <p className="self-center">{content.description}</p>
               </article>
               {content.coverImage && (
                 <Image
-                  className={"hover:shadow-lg transition-shadow duration-200"}
+                  className={'hover:shadow-lg transition-shadow duration-200'}
                   src={content.coverImage}
                   alt={content.title}
                   width={600}

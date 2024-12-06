@@ -1,6 +1,6 @@
-import Container from "./container";
-import Image from "next/image";
-import rcic from "../public/assets/images/certifications/rcic-cicc-capic-accpi.png";
+import Container from '../shared/not-in-use/container';
+import Image from 'next/image';
+import rcic from '../../public/assets/images/certifications/rcic-cicc-capic-accpi.png';
 
 const Footer = () => {
   return (
@@ -17,7 +17,7 @@ const Footer = () => {
             <h3 className="font-bold">Important Links</h3>
             <a
               href={
-                "https://college-ic.ca/protecting-the-public/find-an-immigration-consultant"
+                'https://college-ic.ca/protecting-the-public/find-an-immigration-consultant'
               }
               target="true"
               className="hover:underline block"
@@ -26,7 +26,7 @@ const Footer = () => {
             </a>
             <a
               href={
-                "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/submit-profile.html"
+                'https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/submit-profile.html'
               }
               target="true"
               className="hover:underline block"
@@ -35,7 +35,7 @@ const Footer = () => {
             </a>
             <a
               href={
-                "https://ircc.canada.ca/english/immigrate/skilled/crs-tool.asp"
+                'https://ircc.canada.ca/english/immigrate/skilled/crs-tool.asp'
               }
               target="true"
               className="hover:underline block"
@@ -44,7 +44,7 @@ const Footer = () => {
             </a>
             <a
               href={
-                "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/check-processing-times.html"
+                'https://www.canada.ca/en/immigration-refugees-citizenship/services/application/check-processing-times.html'
               }
               target="true"
               className="hover:underline block"
@@ -61,7 +61,7 @@ const Footer = () => {
               href="mailto:arialimmagtion@gmail.com "
               className="hover:underline block"
             >
-              arialimmagtion@gmail.com{" "}
+              arialimmagtion@gmail.com{' '}
             </a>
           </div>
           <Image src={rcic} alt={`Image for rcic logo`} width={350} />
