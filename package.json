@@ -5,8 +5,8 @@
     "build": "next build",
     "start": "next start -p 8080",
     "typecheck": "tsc",
-    "format:check": "prettier --list-different 'styles/**/*.scss' 'scripts/**/*.{js,jsx,ts,tsx}' 'pages/**/*.{js,jsx,ts,tsx}' 'components/**/*.{js,jsx,ts,tsx}'",
-    "format:fix": "prettier --write 'styles/**/*.scss' 'scripts/**/*.{js,jsx,ts,tsx}' 'pages/**/*.{js,jsx,ts,tsx}' 'components/**/*.{js,jsx,ts,tsx}'"
+    "format:check": "prettier --list-different 'styles/**/*.css' 'pages/**/*.{ts,tsx}' 'components/**/*.{ts,tsx}'",
+    "format:fix": "prettier --write 'styles/**/*.css' 'pages/**/*.{ts,tsx}' 'components/**/*.{ts,tsx}'"
   },
   "dependencies": {
     "classnames": "^2.3.1",

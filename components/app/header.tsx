@@ -18,7 +18,7 @@ const Header = ({ headerLinks }: Props) => {
         {headerLinks.map((link) => {
           // Determine if this is the company name link, home page link, or regular nav link
           const isCompanyName = link.title === COMPANY_NAME;
-          const isHomePage = link.path === '/' && pathname === '/';
+          const isHomePage = link.path === '/home' && pathname === '/home';
           const isActive = link.path === pathname && !isCompanyName;
 
           return (
