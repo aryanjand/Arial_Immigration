@@ -1,6 +1,6 @@
 type HeaderLink = {
   title: string;
-  slug: string;
+  path: string;
 };
 
 export default HeaderLink;

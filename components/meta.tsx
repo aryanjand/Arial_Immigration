@@ -1,5 +1,4 @@
-import Head from "next/head";
-import { CMS_NAME, HOME_OG_IMAGE_URL } from "../lib/constants";
+import Head from 'next/head';
 
 const Meta = () => {
   return (
@@ -34,9 +33,22 @@ const Meta = () => {
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta
         name="description"
-        content={`A statically generated blog example using Next.js and ${CMS_NAME}.`}
+        content="Arial Immigration offers expert immigration consulting services to help you navigate the complexities of immigration processes with ease and confidence."
       />
-      <meta property="og:image" content={HOME_OG_IMAGE_URL} />
+      <meta
+        property="og:title"
+        content="Arial Immigration - Expert Immigration Consulting"
+      />
+      <meta
+        property="og:description"
+        content="Get professional guidance for your immigration needs with Arial Immigration."
+      />
+      <meta property="og:url" content="https://www.arialimmigration.ca" />
+      <meta property="og:type" content="website" />
+      <meta
+        property="og:image"
+        content="https://github.com/aryanjand/Arial_Immigration/blob/main/public/assets/images/hero/hero-maple-leaf.png?raw=true"
+      />
     </Head>
   );
 };
