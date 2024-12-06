@@ -6,6 +6,11 @@ module.exports = {
         destination: '/home',
         permanent: true,
       },
+      {
+        source: '/service',
+        destination: '/services',
+        permanent: true,
+      },
     ];
   },
   images: {
