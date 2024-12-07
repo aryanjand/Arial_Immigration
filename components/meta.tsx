@@ -29,16 +29,15 @@ const Meta = () => {
       <link rel="shortcut icon" href="/favicon/favicon.ico" />
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
-      <meta name="theme-color" content="#000" />
-      <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+      <meta name="theme-color" content="#000000" />
+      {/* SEO Meta */}
       <meta
         name="description"
         content="Arial Immigration offers expert immigration consulting services to help you navigate the complexities of immigration processes with ease and confidence."
       />
-      <meta
-        property="og:title"
-        content="Arial Immigration - Expert Immigration Consulting"
-      />
+      <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+      {/* Open Graph Meta */}
+      <meta property="og:title" content="Arial Immigration" />
       <meta
         property="og:description"
         content="Get professional guidance for your immigration needs with Arial Immigration."
@@ -47,7 +46,20 @@ const Meta = () => {
       <meta property="og:type" content="website" />
       <meta
         property="og:image"
-        content="https://github.com/aryanjand/Arial_Immigration/blob/main/public/assets/images/hero/hero-maple-leaf.png?raw=true"
+        content="https://www.arialimmigration.ca/assets/images/hero/hero-maple-leaf.png"
+      />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      {/* Twitter Meta */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Arial Immigration" />
+      <meta
+        name="twitter:description"
+        content="Get professional guidance for your immigration needs with Arial Immigration."
+      />
+      <meta
+        name="twitter:image"
+        content="https://www.arialimmigration.ca/assets/images/hero/hero-maple-leaf.png"
       />
     </Head>
   );
