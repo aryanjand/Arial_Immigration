@@ -130,3 +130,4 @@ dist
 .pnp.*
 bun.*
 Arial_Immigration_Images/*
+.DS_Store
