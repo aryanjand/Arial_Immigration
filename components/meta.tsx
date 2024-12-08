@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { COMPANY_NAME } from '../lib/constants';
 
 const Meta = () => {
   return (
@@ -6,18 +7,18 @@ const Meta = () => {
       <link
         rel="icon"
         type="image/png"
-        href="/favicon-96x96.png"
+        href="/favicon/favicon-96x96.png"
         sizes="96x96"
       />
-      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-      <link rel="shortcut icon" href="/favicon.ico" />
+      <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+      <link rel="shortcut icon" href="/favicon/favicon.ico" />
       <link
         rel="apple-touch-icon"
         sizes="180x180"
-        href="/apple-touch-icon.png"
+        href="/favicon/apple-touch-icon.png"
       />
-      <meta name="apple-mobile-web-app-title" content="Arial Immgr" />
-      <link rel="manifest" href="/site.webmanifest" />
+      <meta name="apple-mobile-web-app-title" content="Arial Immigration" />
+      <link rel="manifest" href="/favicon/site.webmanifest" />
       <link
         rel="mask-icon"
         href="/favicon/safari-pinned-tab.svg"
@@ -27,6 +28,7 @@ const Meta = () => {
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000000" />
+      <title>{COMPANY_NAME}</title>
       {/* SEO Meta */}
       <meta
         name="description"
