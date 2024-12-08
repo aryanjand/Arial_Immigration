@@ -12,6 +12,21 @@ module.exports = {
         destination: '/services',
         permanent: true,
       },
+      {
+        source: '/aboutus',
+        destination: '/about-us',
+        permanent: true,
+      },
+      {
+        source: '/about',
+        destination: '/about-us',
+        permanent: true,
+      },
+      {
+        source: '/insights',
+        destination: '/insight',
+        permanent: true,
+      },
     ];
   },
   images: {
