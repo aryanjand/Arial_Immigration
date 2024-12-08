@@ -22,18 +22,25 @@ const Header = ({ headerLinks }: Props) => {
           const isActive = link.path === pathname && !isCompanyName;
 
           return (
-            <Link
-              key={link.path}
-              href={`/${link.path}`}
-              className={cn('hover:underline', {
-                'underline font-bold': isActive,
-                'text-2xl md:text-4xl font-bold tracking-tight': isCompanyName,
-                'text-4xl md:text-6xl lg:text-7xl font-bold text-center md:text-left':
-                  isHomePage,
-              })}
-            >
-              {link.title}
-            </Link>
+            <nav>
+              <Link
+                key={link.path}
+                href={`/${link.path}`}
+                className={cn('hover:underline', {
+                  'underline font-bold': isActive,
+                  'text-2xl md:text-4xl font-bold tracking-tight':
+                    isCompanyName,
+                  'text-4xl md:text-6xl lg:text-7xl font-bold text-center md:text-left':
+                    isHomePage,
+                })}
+              >
+                {isCompanyName ? (
+                  <h1>{link.title}</h1>
+                ) : (
+                  <span>{link.title}</span>
+                )}
+              </Link>
+            </nav>
           );
         })}
       </nav>

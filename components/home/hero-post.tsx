@@ -14,7 +14,9 @@ const HeroPost = ({ title, coverImage, description }: Props) => {
       </div>
       <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
         <div>
-          <h3 className="mb-4 text-4xl lg:text-5xl leading-tight">{title}</h3>
+          <span className="mb-4 text-4xl lg:text-5xl leading-tight">
+            {title}
+          </span>
         </div>
         <div>
           <p className="text-lg leading-relaxed mb-4">{description}</p>
