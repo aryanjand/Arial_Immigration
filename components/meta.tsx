@@ -11,14 +11,30 @@ const Meta = () => {
         sizes="96x96"
       />
       <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-      <link rel="shortcut icon" href="/favicon/favicon.ico" />
       <link
         rel="apple-touch-icon"
         sizes="180x180"
         href="/favicon/apple-touch-icon.png"
       />
+      <link
+        rel="icon"
+        type="image/png"
+        href="/favicon/web-app-manifest-192x192.png"
+        sizes="192x192"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        href="/favicon/web-app-manifest-512x512.png"
+        sizes="512x512"
+      />
       <meta name="apple-mobile-web-app-title" content="Arial Immigration" />
-      <link rel="manifest" href="/favicon/site.webmanifest" />
+      <link
+        rel="manifest"
+        href="/favicon/site.webmanifest"
+        crossOrigin="use-credentials"
+      />
+      <link rel="manifest" href="manifest.json" />
       <link
         rel="mask-icon"
         href="/favicon/safari-pinned-tab.svg"
@@ -28,6 +44,7 @@ const Meta = () => {
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000000" />
+
       <title>{COMPANY_NAME}</title>
       {/* SEO Meta */}
       <meta
