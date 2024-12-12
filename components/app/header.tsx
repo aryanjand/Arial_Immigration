@@ -54,7 +54,7 @@ const Header = ({ headerLinks }: Props) => {
         <Link
           href={`/${title.path}`}
           className={cn('hover:underline', {
-            'text-4xl md:text-6xl font-bold tracking-tight': isCompanyName,
+            'text-5xl md:text-6xl font-bold tracking-tight': isCompanyName,
             'text-5xl md:text-6xl lg:text-7xl font-bold text-center md:text-left':
               isHomePage,
           })}
