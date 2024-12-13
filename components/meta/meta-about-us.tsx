@@ -35,7 +35,7 @@ const MetaAboutUs = () => {
         name="description"
         content="Learn more about Arial Immigration, our mission, and how we help clients navigate complex immigration processes with confidence."
       />
-      <link rel="canonical" href="https://www.arialimmigration.ca/about-us" />
+      <link rel="canonical" href={`${process.env.SITE_URL}/about-us`} />
 
       {/* Open Graph Meta */}
       <meta property="og:title" content="About Us - Arial Immigration" />
@@ -43,14 +43,11 @@ const MetaAboutUs = () => {
         property="og:description"
         content="Discover how Arial Immigration helps individuals and families achieve their immigration goals with expert consulting services."
       />
-      <meta
-        property="og:url"
-        content="https://www.arialimmigration.ca/about-us"
-      />
+      <meta property="og:url" content={`${process.env.SITE_URL}/about-us`} />
       <meta property="og:type" content="website" />
       <meta
         property="og:image"
-        content="https://www.arialimmigration.ca/assets/images/hero/hero-about-us.png"
+        content={`${process.env.SITE_URL}/assets/images/hero/hero-about-us.png`}
       />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
@@ -64,7 +61,7 @@ const MetaAboutUs = () => {
       />
       <meta
         name="twitter:image"
-        content="https://www.arialimmigration.ca/assets/images/hero/hero-about-us.png"
+        content={`${process.env.SITE_URL}/assets/images/hero/hero-about-us.png`}
       />
 
       {/* Structured Data */}
@@ -75,7 +72,7 @@ const MetaAboutUs = () => {
             '@context': 'https://schema.org',
             '@type': 'WebPage',
             name: 'About Us',
-            url: 'https://www.arialimmigration.ca/about-us',
+            url: `${process.env.SITE_URL}/about-us`,
             description:
               'Learn more about Arial Immigration, our mission, and how we help clients navigate complex immigration processes with confidence.',
             publisher: {
@@ -83,7 +80,7 @@ const MetaAboutUs = () => {
               name: 'Arial Immigration',
               logo: {
                 '@type': 'ImageObject',
-                url: 'https://www.arialimmigration.ca/assets/images/logo/logo.png',
+                url: `${process.env.SITE_URL}/assets/images/logo/logo.png`,
               },
             },
             areaServed: 'Canada',
