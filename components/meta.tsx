@@ -60,6 +60,25 @@ const Meta = () => {
         name="twitter:image"
         content="https://www.arialimmigration.ca/assets/images/hero/hero-maple-leaf.png"
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'Arial Immigration',
+            url: 'https://www.arialimmigration.ca',
+            logo: 'https://www.arialimmigration.ca/assets/images/logo/logo.png',
+            description:
+              'Arial Immigration offers expert immigration consulting services to help you navigate the complexities of immigration processes with ease and confidence.',
+            contactPoint: {
+              '@type': 'ContactPoint',
+              telephone: '+1-604-368-6092',
+              contactType: 'Customer Service',
+            },
+          }),
+        }}
+      ></script>
     </Head>
   );
 };
