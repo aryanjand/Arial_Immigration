@@ -35,18 +35,18 @@ const MetaHome = () => {
         content="Arial Immigration offers expert immigration consulting services to help you navigate the complexities of immigration processes with ease and confidence."
       />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <link rel="canonical" href="https://www.arialimmigration.ca/home" />
+      <link rel="canonical" href={`${process.env.SITE_URL}/home`} />
       {/* Open Graph Meta */}
       <meta property="og:title" content="Arial Immigration" />
       <meta
         property="og:description"
         content="Get professional guidance for your immigration needs with Arial Immigration."
       />
-      <meta property="og:url" content="https://www.arialimmigration.ca" />
+      <meta property="og:url" content={`${process.env.SITE_URL}`} />
       <meta property="og:type" content="website" />
       <meta
         property="og:image"
-        content="https://www.arialimmigration.ca/assets/images/hero/hero-maple-leaf.png"
+        content={`${process.env.SITE_URL}/assets/images/hero/hero-maple-leaf.png`}
       />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
@@ -59,7 +59,7 @@ const MetaHome = () => {
       />
       <meta
         name="twitter:image"
-        content="https://www.arialimmigration.ca/assets/images/hero/hero-maple-leaf.png"
+        content={`${process.env.SITE_URL}/assets/images/hero/hero-maple-leaf.png`}
       />
       <script
         type="application/ld+json"
@@ -68,13 +68,13 @@ const MetaHome = () => {
             '@context': 'https://schema.org',
             '@type': 'Organization',
             name: 'Arial Immigration',
-            url: 'https://www.arialimmigration.ca',
-            logo: 'https://www.arialimmigration.ca/assets/images/logo/logo.png',
+            url: `${process.env.SITE_URL}`,
+            logo: `${process.env.SITE_URL}/assets/images/logo/logo.png`,
             description:
               'Arial Immigration offers expert immigration consulting services to help you navigate the complexities of immigration processes with ease and confidence.',
             contactPoint: {
               '@type': 'ContactPoint',
-              telephone: '+1-604-368-6092',
+              telephone: `${process.env.PHONE_NUMBER}`,
               contactType: 'Customer Service',
             },
             areaServed: 'Canada',

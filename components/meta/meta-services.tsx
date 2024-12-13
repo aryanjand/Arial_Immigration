@@ -36,7 +36,7 @@ const MetaServices = () => {
         name="description"
         content="Explore a wide range of services at Arial Immigration, including Study Visas, Visitor Visas, Work Visas, Express Entry, Citizenship, and more. Let us help you achieve your Canadian dream."
       />
-      <link rel="canonical" href="https://www.arialimmigration.ca/services" />
+      <link rel="canonical" href={`${process.env.SITE_URL}/services`} />
 
       {/* Open Graph Meta */}
       <meta property="og:title" content="Our Services - Arial Immigration" />
@@ -44,14 +44,11 @@ const MetaServices = () => {
         property="og:description"
         content="Arial Immigration provides expert guidance for Study Visas, Visitor Visas, Work Visas, LMIA, Citizenship, and Express Entry. Explore our services today!"
       />
-      <meta
-        property="og:url"
-        content="https://www.arialimmigration.ca/services"
-      />
+      <meta property="og:url" content={`${process.env.SITE_URL}/services`} />
       <meta property="og:type" content="website" />
       <meta
         property="og:image"
-        content="https://www.arialimmigration.ca/assets/images/hero/hero-services.png"
+        content={`${process.env.SITE_URL}/assets/images/hero/hero-services.png`}
       />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
@@ -65,7 +62,7 @@ const MetaServices = () => {
       />
       <meta
         name="twitter:image"
-        content="https://www.arialimmigration.ca/assets/images/hero/hero-services.png"
+        content={`${process.env.SITE_URL}/assets/images/hero/hero-services.png`}
       />
 
       {/* Structured Data */}
@@ -78,12 +75,12 @@ const MetaServices = () => {
             name: 'Immigration Services',
             description:
               'Arial Immigration provides expert immigration consulting for Study Visas, Visitor Visas, Work Visas, Express Entry, Citizenship, and LMIA support.',
-            url: 'https://www.arialimmigration.ca/services',
+            url: `${process.env.SITE_URL}/services`,
             provider: {
               '@type': 'Organization',
               name: 'Arial Immigration',
-              url: 'https://www.arialimmigration.ca',
-              logo: 'https://www.arialimmigration.ca/assets/images/logo/logo.png',
+              url: `${process.env.SITE_URL}`,
+              logo: `${process.env.SITE_URL}/assets/images/logo/logo.png`,
             },
             areaServed: 'Canada',
           }),
