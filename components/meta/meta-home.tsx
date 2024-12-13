@@ -1,7 +1,7 @@
 import Head from 'next/head';
-import { COMPANY_NAME } from '../lib/constants';
+import { COMPANY_NAME } from '../../lib/constants';
 
-const Meta = () => {
+const MetaHome = () => {
   return (
     <Head>
       <link
@@ -35,6 +35,7 @@ const Meta = () => {
         content="Arial Immigration offers expert immigration consulting services to help you navigate the complexities of immigration processes with ease and confidence."
       />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+      <link rel="canonical" href="https://www.arialimmigration.ca/home" />
       {/* Open Graph Meta */}
       <meta property="og:title" content="Arial Immigration" />
       <meta
@@ -76,6 +77,7 @@ const Meta = () => {
               telephone: '+1-604-368-6092',
               contactType: 'Customer Service',
             },
+            areaServed: 'Canada',
           }),
         }}
       ></script>
@@ -83,4 +85,4 @@ const Meta = () => {
   );
 };
 
-export default Meta;
+export default MetaHome;

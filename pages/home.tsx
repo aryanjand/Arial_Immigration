@@ -9,6 +9,7 @@ import sponsor_image from '../public/assets/images/services/sponsor.png';
 import HeaderLink from '../interfaces/headerlink';
 import ContactUs from '../components/home/contact-us/contact-us';
 import SectionSeparator from '../components/shared/section-separator';
+import MetaHome from '../components/meta/meta-home';
 
 type Props = {
   allPosts: Post[];
@@ -21,6 +22,7 @@ const Home = ({ allPosts }: Props) => {
   const morePosts = allPosts;
   return (
     <Layout>
+      <MetaHome />
       {heroPost && (
         <HeroPost
           title={heroPost.title}
