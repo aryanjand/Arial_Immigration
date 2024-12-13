@@ -9,6 +9,7 @@ import lmia_image from '../public/assets/images/services/lmia.png';
 import citizenship_image from '../public/assets/images/services/citizenship.png';
 import express_image from '../public/assets/images/services/express-entry.png';
 import ServiceBody from '../components/services/service-body';
+import MetaServices from '../components/meta/meta-services';
 
 type Props = {
   post: ContentType;
@@ -17,6 +18,7 @@ type Props = {
 export default function Service({ post }: Props) {
   return (
     <Layout>
+      <MetaServices />
       <article className="mb-32">
         <PostHeader title={post.title} coverImage={post.coverImage} />
         {post.content.map((c, index) => (

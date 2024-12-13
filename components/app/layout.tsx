@@ -1,7 +1,6 @@
 import { COMPANY_NAME } from '../../lib/constants';
 import Footer from './footer';
 import Header from './header';
-import Meta from '../meta';
 
 type Props = {
   preview?: boolean;
@@ -29,7 +28,6 @@ const Layout = ({ children }: Props) => {
   ];
   return (
     <>
-      <Meta />
       <div className="min-h-screen">
         <main>
           <div className="container mx-auto px-5 my-20">

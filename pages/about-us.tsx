@@ -4,6 +4,7 @@ import Layout from '../components/app/layout';
 import type ContentType from '../interfaces/content-type';
 import CoverImage from '../public/assets/images/hero/hero-about-us.png';
 import rcic_cric from '../public/assets/images/certifications/rcic-cric.png';
+import MetaAboutUs from '../components/meta/meta-about-us';
 
 type Props = {
   post: ContentType;
@@ -12,6 +13,7 @@ type Props = {
 const AboutUs = ({ post }: Props) => {
   return (
     <Layout>
+      <MetaAboutUs />
       <PostHeader title={post.title} coverImage={post.coverImage} />
       <article className="mb-32">
         {post.content.map((c) => (

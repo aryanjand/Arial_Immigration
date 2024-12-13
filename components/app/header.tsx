@@ -30,7 +30,7 @@ const Header = ({ headerLinks }: Props) => {
         <li
           key={link.title}
           className={cn({
-            'border-b font-bold my-8': isMobile,
+            'font-bold my-8': isMobile,
           })}
         >
           <Link
@@ -70,9 +70,9 @@ const Header = ({ headerLinks }: Props) => {
           </div>
 
           {isNavOpen && (
-            <div className="absolute top-0 left-0 w-full h-full bg-white z-10 flex flex-col justify-evenly items-center">
+            <div className="absolute top-0 left-0 w-full h-full bg-neutral-50 z-10 flex flex-col justify-evenly items-center">
               <div
-                className="absolute top-0 right-0 px-16 py-8"
+                className="absolute top-0 right-0 px-10 py-10"
                 onClick={toggleNav}
               >
                 <svg
