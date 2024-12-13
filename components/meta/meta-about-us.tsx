@@ -17,7 +17,7 @@ const MetaAboutUs = () => {
         sizes="180x180"
         href="/favicon/apple-touch-icon.png"
       />
-      <meta name="apple-mobile-web-app-title" content="Arial Immigration" />
+      <meta name="apple-mobile-web-app-title" content={`${COMPANY_NAME}`} />
       <link rel="manifest" href="/favicon/site.webmanifest" />
       <link
         rel="mask-icon"
@@ -33,16 +33,17 @@ const MetaAboutUs = () => {
       <title>{COMPANY_NAME}</title>
       <meta
         name="description"
-        content="Learn more about Arial Immigration, our mission, and how we help clients navigate complex immigration processes with confidence."
+        content={`Learn more about ${COMPANY_NAME}, our mission, and how we help clients navigate complex immigration processes with confidence.`}
       />
       <link rel="canonical" href={`${process.env.SITE_URL}/about-us`} />
 
       {/* Open Graph Meta */}
-      <meta property="og:title" content="About Us - Arial Immigration" />
+      <meta property="og:title" content={`About Us - ${COMPANY_NAME}`} />
       <meta
         property="og:description"
         content="Discover how Arial Immigration helps individuals and families achieve their immigration goals with expert consulting services."
       />
+      <meta property="og:site_name" content={COMPANY_NAME} />
       <meta property="og:url" content={`${process.env.SITE_URL}/about-us`} />
       <meta property="og:type" content="website" />
       <meta
@@ -54,10 +55,10 @@ const MetaAboutUs = () => {
 
       {/* Twitter Meta */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="About Us - Arial Immigration" />
+      <meta name="twitter:title" content={`About Us - ${COMPANY_NAME}`} />
       <meta
         name="twitter:description"
-        content="Discover how Arial Immigration helps individuals and families achieve their immigration goals with expert consulting services."
+        content={`Discover how ${COMPANY_NAME} helps individuals and families achieve their immigration goals with expert consulting services.`}
       />
       <meta
         name="twitter:image"
@@ -73,11 +74,10 @@ const MetaAboutUs = () => {
             '@type': 'WebPage',
             name: 'About Us',
             url: `${process.env.SITE_URL}/about-us`,
-            description:
-              'Learn more about Arial Immigration, our mission, and how we help clients navigate complex immigration processes with confidence.',
+            description: `Learn more about ${COMPANY_NAME}, our mission, and how we help clients navigate complex immigration processes with confidence.`,
             publisher: {
               '@type': 'Organization',
-              name: 'Arial Immigration',
+              name: `${COMPANY_NAME}`,
               logo: {
                 '@type': 'ImageObject',
                 url: `${process.env.SITE_URL}/assets/images/logo/logo.png`,

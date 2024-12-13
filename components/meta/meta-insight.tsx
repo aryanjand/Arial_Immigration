@@ -17,7 +17,7 @@ const MetaInsight = () => {
         sizes="180x180"
         href="/favicon/apple-touch-icon.png"
       />
-      <meta name="apple-mobile-web-app-title" content="Arial Immigration" />
+      <meta name="apple-mobile-web-app-title" content={COMPANY_NAME} />
       <link rel="manifest" href="/favicon/site.webmanifest" />
       <link
         rel="mask-icon"
@@ -41,12 +41,13 @@ const MetaInsight = () => {
       {/* Open Graph Meta */}
       <meta
         property="og:title"
-        content="Immigration Insights - Arial Immigration"
+        content={`Immigration Insights - ${COMPANY_NAME}`}
       />
       <meta
         property="og:description"
-        content="Explore news and updates on Canadian immigration. Stay updated on policies, trends, and inspiring stories with Arial Immigration Insights."
+        content={`Explore news and updates on Canadian immigration. Stay updated on policies, trends, and inspiring stories with ${COMPANY_NAME} Insights.`}
       />
+      <meta property="og:site_name" content={COMPANY_NAME} />
       <meta property="og:url" content={`${process.env.SITE_URL}/insight`} />
       <meta property="og:type" content="website" />
       <meta
@@ -60,11 +61,11 @@ const MetaInsight = () => {
       <meta name="twitter:card" content="summary_large_image" />
       <meta
         name="twitter:title"
-        content="Immigration Insights - Arial Immigration"
+        content={`Immigration Insights - ${COMPANY_NAME}`}
       />
       <meta
         name="twitter:description"
-        content="Stay informed with Canadian immigration news, trends, and stories brought to you by Arial Immigration."
+        content={`Stay informed with Canadian immigration news, trends, and stories brought to you by ${COMPANY_NAME}.`}
       />
       <meta
         name="twitter:image"
@@ -84,7 +85,7 @@ const MetaInsight = () => {
             url: `${process.env.SITE_URL}/insight`,
             publisher: {
               '@type': 'Organization',
-              name: 'Arial Immigration',
+              name: `${COMPANY_NAME}`,
               logo: {
                 '@type': 'ImageObject',
                 url: `${process.env.SITE_URL}/assets/images/logo/logo.png`,

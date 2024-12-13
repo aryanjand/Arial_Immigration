@@ -16,7 +16,7 @@ const MetaHome = () => {
         sizes="180x180"
         href="/favicon/apple-touch-icon.png"
       />
-      <meta name="apple-mobile-web-app-title" content="Arial Immigration" />
+      <meta name="apple-mobile-web-app-title" content={COMPANY_NAME} />
       <link rel="manifest" href="/favicon/site.webmanifest" />
       <link
         rel="mask-icon"
@@ -32,16 +32,17 @@ const MetaHome = () => {
       {/* SEO Meta */}
       <meta
         name="description"
-        content="Arial Immigration offers expert immigration consulting services to help you navigate the complexities of immigration processes with ease and confidence."
+        content={`${COMPANY_NAME} offers expert immigration consulting services to help you navigate the complexities of immigration processes with ease and confidence.`}
       />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <link rel="canonical" href={`${process.env.SITE_URL}/home`} />
       {/* Open Graph Meta */}
-      <meta property="og:title" content="Arial Immigration" />
+      <meta property="og:title" content={COMPANY_NAME} />
       <meta
         property="og:description"
-        content="Get professional guidance for your immigration needs with Arial Immigration."
+        content={`Get professional guidance for your immigration needs with ${COMPANY_NAME}.`}
       />
+      <meta property="og:site_name" content={COMPANY_NAME} />
       <meta property="og:url" content={`${process.env.SITE_URL}`} />
       <meta property="og:type" content="website" />
       <meta
@@ -52,10 +53,10 @@ const MetaHome = () => {
       <meta property="og:image:height" content="630" />
       {/* Twitter Meta */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Arial Immigration" />
+      <meta name="twitter:title" content={COMPANY_NAME} />
       <meta
         name="twitter:description"
-        content="Get professional guidance for your immigration needs with Arial Immigration."
+        content={`Get professional guidance for your immigration needs with ${COMPANY_NAME}.`}
       />
       <meta
         name="twitter:image"
@@ -67,11 +68,10 @@ const MetaHome = () => {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Organization',
-            name: 'Arial Immigration',
+            name: `${COMPANY_NAME}`,
             url: `${process.env.SITE_URL}`,
             logo: `${process.env.SITE_URL}/assets/images/logo/logo.png`,
-            description:
-              'Arial Immigration offers expert immigration consulting services to help you navigate the complexities of immigration processes with ease and confidence.',
+            description: `${COMPANY_NAME} offers expert immigration consulting services to help you navigate the complexities of immigration processes with ease and confidence.`,
             contactPoint: {
               '@type': 'ContactPoint',
               telephone: `${process.env.PHONE_NUMBER}`,

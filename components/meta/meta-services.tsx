@@ -17,7 +17,7 @@ const MetaServices = () => {
         sizes="180x180"
         href="/favicon/apple-touch-icon.png"
       />
-      <meta name="apple-mobile-web-app-title" content="Arial Immigration" />
+      <meta name="apple-mobile-web-app-title" content={COMPANY_NAME} />
       <link rel="manifest" href="/favicon/site.webmanifest" />
       <link
         rel="mask-icon"
@@ -34,16 +34,17 @@ const MetaServices = () => {
 
       <meta
         name="description"
-        content="Explore a wide range of services at Arial Immigration, including Study Visas, Visitor Visas, Work Visas, Express Entry, Citizenship, and more. Let us help you achieve your Canadian dream."
+        content={`Explore a wide range of services at ${COMPANY_NAME}, including Study Visas, Visitor Visas, Work Visas, Express Entry, Citizenship, and more. Let us help you achieve your Canadian dream.`}
       />
       <link rel="canonical" href={`${process.env.SITE_URL}/services`} />
 
       {/* Open Graph Meta */}
-      <meta property="og:title" content="Our Services - Arial Immigration" />
+      <meta property="og:title" content={`Our Services - ${COMPANY_NAME}`} />
       <meta
         property="og:description"
-        content="Arial Immigration provides expert guidance for Study Visas, Visitor Visas, Work Visas, LMIA, Citizenship, and Express Entry. Explore our services today!"
+        content={`${COMPANY_NAME} provides expert guidance for Study Visas, Visitor Visas, Work Visas, LMIA, Citizenship, and Express Entry. Explore our services today!`}
       />
+      <meta property="og:site_name" content={COMPANY_NAME} />
       <meta property="og:url" content={`${process.env.SITE_URL}/services`} />
       <meta property="og:type" content="website" />
       <meta
@@ -55,10 +56,10 @@ const MetaServices = () => {
 
       {/* Twitter Meta */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Our Services - Arial Immigration" />
+      <meta name="twitter:title" content={`Our Services - ${COMPANY_NAME}`} />
       <meta
         name="twitter:description"
-        content="Discover a wide range of immigration services, including Study Visas, Visitor Visas, Work Visas, and more, at Arial Immigration."
+        content={`Discover a wide range of immigration services, including Study Visas, Visitor Visas, Work Visas, and more, at ${COMPANY_NAME}.`}
       />
       <meta
         name="twitter:image"
@@ -73,12 +74,11 @@ const MetaServices = () => {
             '@context': 'https://schema.org',
             '@type': 'Service',
             name: 'Immigration Services',
-            description:
-              'Arial Immigration provides expert immigration consulting for Study Visas, Visitor Visas, Work Visas, Express Entry, Citizenship, and LMIA support.',
+            description: `${COMPANY_NAME} provides expert immigration consulting for Study Visas, Visitor Visas, Work Visas, Express Entry, Citizenship, and LMIA support.`,
             url: `${process.env.SITE_URL}/services`,
             provider: {
               '@type': 'Organization',
-              name: 'Arial Immigration',
+              name: `${COMPANY_NAME}`,
               url: `${process.env.SITE_URL}`,
               logo: `${process.env.SITE_URL}/assets/images/logo/logo.png`,
             },
