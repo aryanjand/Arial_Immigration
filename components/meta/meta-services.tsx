@@ -17,7 +17,7 @@ const MetaServices = () => {
         sizes="180x180"
         href="/favicon/apple-touch-icon.png"
       />
-      <meta name="apple-mobile-web-app-title" content="Arial Immigration" />
+      <meta name="apple-mobile-web-app-title" content={COMPANY_NAME} />
       <link rel="manifest" href="/favicon/site.webmanifest" />
       <link
         rel="mask-icon"
@@ -34,38 +34,36 @@ const MetaServices = () => {
 
       <meta
         name="description"
-        content="Explore a wide range of services at Arial Immigration, including Study Visas, Visitor Visas, Work Visas, Express Entry, Citizenship, and more. Let us help you achieve your Canadian dream."
+        content={`Explore a wide range of services at ${COMPANY_NAME}, including Study Visas, Visitor Visas, Work Visas, Express Entry, Citizenship, and more. Let us help you achieve your Canadian dream.`}
       />
-      <link rel="canonical" href="https://www.arialimmigration.ca/services" />
+      <link rel="canonical" href={`${process.env.SITE_URL}/services`} />
 
       {/* Open Graph Meta */}
-      <meta property="og:title" content="Our Services - Arial Immigration" />
+      <meta property="og:title" content={`Our Services - ${COMPANY_NAME}`} />
       <meta
         property="og:description"
-        content="Arial Immigration provides expert guidance for Study Visas, Visitor Visas, Work Visas, LMIA, Citizenship, and Express Entry. Explore our services today!"
+        content={`${COMPANY_NAME} provides expert guidance for Study Visas, Visitor Visas, Work Visas, LMIA, Citizenship, and Express Entry. Explore our services today!`}
       />
-      <meta
-        property="og:url"
-        content="https://www.arialimmigration.ca/services"
-      />
+      <meta property="og:site_name" content={COMPANY_NAME} />
+      <meta property="og:url" content={`${process.env.SITE_URL}/services`} />
       <meta property="og:type" content="website" />
       <meta
         property="og:image"
-        content="https://www.arialimmigration.ca/assets/images/hero/hero-services.png"
+        content={`${process.env.SITE_URL}/assets/images/hero/hero-services.png`}
       />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
 
       {/* Twitter Meta */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Our Services - Arial Immigration" />
+      <meta name="twitter:title" content={`Our Services - ${COMPANY_NAME}`} />
       <meta
         name="twitter:description"
-        content="Discover a wide range of immigration services, including Study Visas, Visitor Visas, Work Visas, and more, at Arial Immigration."
+        content={`Discover a wide range of immigration services, including Study Visas, Visitor Visas, Work Visas, and more, at ${COMPANY_NAME}.`}
       />
       <meta
         name="twitter:image"
-        content="https://www.arialimmigration.ca/assets/images/hero/hero-services.png"
+        content={`${process.env.SITE_URL}/assets/images/hero/hero-services.png`}
       />
 
       {/* Structured Data */}
@@ -76,14 +74,13 @@ const MetaServices = () => {
             '@context': 'https://schema.org',
             '@type': 'Service',
             name: 'Immigration Services',
-            description:
-              'Arial Immigration provides expert immigration consulting for Study Visas, Visitor Visas, Work Visas, Express Entry, Citizenship, and LMIA support.',
-            url: 'https://www.arialimmigration.ca/services',
+            description: `${COMPANY_NAME} provides expert immigration consulting for Study Visas, Visitor Visas, Work Visas, Express Entry, Citizenship, and LMIA support.`,
+            url: `${process.env.SITE_URL}/services`,
             provider: {
               '@type': 'Organization',
-              name: 'Arial Immigration',
-              url: 'https://www.arialimmigration.ca',
-              logo: 'https://www.arialimmigration.ca/assets/images/logo/logo.png',
+              name: `${COMPANY_NAME}`,
+              url: `${process.env.SITE_URL}`,
+              logo: `${process.env.SITE_URL}/assets/images/logo/logo.png`,
             },
             areaServed: 'Canada',
           }),

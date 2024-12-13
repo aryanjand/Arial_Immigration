@@ -17,7 +17,7 @@ const MetaInsight = () => {
         sizes="180x180"
         href="/favicon/apple-touch-icon.png"
       />
-      <meta name="apple-mobile-web-app-title" content="Arial Immigration" />
+      <meta name="apple-mobile-web-app-title" content={COMPANY_NAME} />
       <link rel="manifest" href="/favicon/site.webmanifest" />
       <link
         rel="mask-icon"
@@ -36,25 +36,23 @@ const MetaInsight = () => {
         name="description"
         content="Stay informed with the latest news and insights on Canadian immigration policies, trends, and success stories."
       />
-      <link rel="canonical" href="https://www.arialimmigration.ca/insight" />
+      <link rel="canonical" href={`${process.env.SITE_URL}/insight`} />
 
       {/* Open Graph Meta */}
       <meta
         property="og:title"
-        content="Immigration Insights - Arial Immigration"
+        content={`Immigration Insights - ${COMPANY_NAME}`}
       />
       <meta
         property="og:description"
-        content="Explore news and updates on Canadian immigration. Stay updated on policies, trends, and inspiring stories with Arial Immigration Insights."
+        content={`Explore news and updates on Canadian immigration. Stay updated on policies, trends, and inspiring stories with ${COMPANY_NAME} Insights.`}
       />
-      <meta
-        property="og:url"
-        content="https://www.arialimmigration.ca/insight"
-      />
+      <meta property="og:site_name" content={COMPANY_NAME} />
+      <meta property="og:url" content={`${process.env.SITE_URL}/insight`} />
       <meta property="og:type" content="website" />
       <meta
         property="og:image"
-        content="https://www.arialimmigration.ca/assets/images/hero/hero-insight.png"
+        content={`${process.env.SITE_URL}/assets/images/hero/hero-insight.png`}
       />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
@@ -63,15 +61,15 @@ const MetaInsight = () => {
       <meta name="twitter:card" content="summary_large_image" />
       <meta
         name="twitter:title"
-        content="Immigration Insights - Arial Immigration"
+        content={`Immigration Insights - ${COMPANY_NAME}`}
       />
       <meta
         name="twitter:description"
-        content="Stay informed with Canadian immigration news, trends, and stories brought to you by Arial Immigration."
+        content={`Stay informed with Canadian immigration news, trends, and stories brought to you by ${COMPANY_NAME}.`}
       />
       <meta
         name="twitter:image"
-        content="https://www.arialimmigration.ca/assets/images/hero/hero-insight.png"
+        content={`${process.env.SITE_URL}/assets/images/hero/hero-insight.png`}
       />
 
       {/* Structured Data */}
@@ -84,13 +82,13 @@ const MetaInsight = () => {
             name: 'Immigration Insights',
             description:
               'A collection of news, insights, and updates about Canadian immigration trends, policies, and success stories.',
-            url: 'https://www.arialimmigration.ca/insight',
+            url: `${process.env.SITE_URL}/insight`,
             publisher: {
               '@type': 'Organization',
-              name: 'Arial Immigration',
+              name: `${COMPANY_NAME}`,
               logo: {
                 '@type': 'ImageObject',
-                url: 'https://www.arialimmigration.ca/assets/images/logo/logo.png',
+                url: `${process.env.SITE_URL}/assets/images/logo/logo.png`,
               },
             },
             mainEntity: {
@@ -100,37 +98,37 @@ const MetaInsight = () => {
                   '@type': 'ListItem',
                   position: 1,
                   name: 'Canadian Immigration News',
-                  url: 'https://www.arialimmigration.ca/insight',
+                  url: `${process.env.SITE_URL}/insight`,
                 },
                 {
                   '@type': 'ListItem',
                   position: 2,
                   name: 'Canadian Immigration Trends',
-                  url: 'https://www.arialimmigration.ca/insight',
+                  url: `${process.env.SITE_URL}/insight`,
                 },
                 {
                   '@type': 'ListItem',
                   position: 3,
                   name: 'Inspiring Immigration Stories',
-                  url: 'https://www.arialimmigration.ca/insight',
+                  url: `${process.env.SITE_URL}/insight`,
                 },
                 {
                   '@type': 'ListItem',
                   position: 4,
                   name: 'Study Visa Opportunities',
-                  url: 'https://www.arialimmigration.ca/insight',
+                  url: `${process.env.SITE_URL}/insight`,
                 },
                 {
                   '@type': 'ListItem',
                   position: 5,
                   name: 'Visitor Visa Updates',
-                  url: 'https://www.arialimmigration.ca/insight',
+                  url: `${process.env.SITE_URL}/insight`,
                 },
                 {
                   '@type': 'ListItem',
                   position: 6,
                   name: 'Work Visa Insights',
-                  url: 'https://www.arialimmigration.ca/insight',
+                  url: `${process.env.SITE_URL}/insight`,
                 },
               ],
             },

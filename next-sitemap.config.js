@@ -1,4 +1,4 @@
 module.exports = {
-  siteUrl: 'https://www.arialimmigration.ca/home',
-  generateRobotsTxt: true, // Generates robots.txt file
+  siteUrl: `${process.env.SITE_URL}/home`,
+  generateRobotsTxt: true,
 };

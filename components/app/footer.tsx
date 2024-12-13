@@ -53,14 +53,17 @@ const Footer = () => {
         </div>
         <div>
           <h3 className="font-bold">Contact Us</h3>
-          <Link href="tel:+16043686092" className="hover:underline block">
-            +1 (604) 368-6092
-          </Link>
           <Link
-            href="mailto:arialimmagtion@gmail.com "
+            href={`tel:${process.env.PHONE_NUMBER}`}
             className="hover:underline block"
           >
-            arialimmagtion@gmail.com
+            {process.env.PHONE_NUMBER}
+          </Link>
+          <Link
+            href={`mailto:${process.env.EMAIL}`}
+            className="hover:underline block"
+          >
+            {process.env.EMAIL}
           </Link>
         </div>
         <Image src={rcic} alt={`Image for rcic logo`} width={350} />
