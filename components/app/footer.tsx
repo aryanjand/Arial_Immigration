@@ -57,13 +57,13 @@ const Footer = () => {
             href={`tel:${process.env.PHONE_NUMBER}`}
             className="hover:underline block"
           >
-            {process.env.PHONE_NUMBER}
+            +1-604-368-6092
           </Link>
           <Link
             href={`mailto:${process.env.EMAIL}`}
             className="hover:underline block"
           >
-            {process.env.EMAIL}
+            arialimmagtion@gmail.com
           </Link>
         </div>
         <Image src={rcic} alt={`Image for rcic logo`} width={350} />
