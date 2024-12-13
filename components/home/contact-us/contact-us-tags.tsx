@@ -21,14 +21,34 @@ const ContactUsTags = () => {
   ];
 
   return (
-    <>
+    <ul className="space-y-6">
       {inputsArray.map((input) => (
-        <div key={input.description} className="m-10">
-          <h5 className="font-medium">{input.heading}</h5>
-          <p className="font-light">{input.description}</p>
-        </div>
+        <li
+          key={input.description}
+          className="mt-10 font-medium flex items-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5 text-gray-600 mr-5"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              d="M10 5l5 5-5 5"
+              stroke="currentColor"
+              strokeWidth="2"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          <span>
+            <span className="text-xl mb-2">{input.heading}</span>
+            <p className="font-light text-lg">{input.description}</p>
+          </span>
+        </li>
       ))}
-    </>
+    </ul>
   );
 };
 
