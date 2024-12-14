@@ -53,14 +53,11 @@ const Footer = () => {
         </div>
         <div>
           <h3 className="font-bold">Contact Us</h3>
-          <Link
-            href={`tel:${process.env.PHONE_NUMBER}`}
-            className="hover:underline block"
-          >
+          <Link href={`tel:+1-604-368-6092`} className="hover:underline block">
             +1-604-368-6092
           </Link>
           <Link
-            href={`mailto:${process.env.EMAIL}`}
+            href={`mailto:arialimmagtion@gmail.com`}
             className="hover:underline block"
           >
             arialimmagtion@gmail.com
