@@ -20,15 +20,13 @@ const InsightCard = ({ content }: Props) => {
       )}
     >
       <h2 className="text-2xl font-light">{content.title}</h2>
-      <>
-        <article className="flex flex-col gap-3">
-          <p>{content.contentSnippet}</p>
-        </article>
-      </>
+      <article className="flex flex-col gap-3">
+        <p>{content.contentSnippet}</p>
+      </article>
       <a
         href={content.link}
         target="_blank"
-        className="hover:underline flex flex-row items-center gap-1"
+        className="hover:underline flex flex-row items-center gap-1 mt-auto py-2 px-4 rounded"
       >
         Details
         <svg

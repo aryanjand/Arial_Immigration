@@ -5,7 +5,7 @@ import CoverImage from '../public/assets/images/hero/hero-insight.png';
 import InsightCard from '../components/insight/insight-card';
 import { INSIGHT_HEADING } from '../lib/constants';
 import MetaInsight from '../components/meta/meta-insight';
-import { news } from 'gnews';
+const news = require('gnews');
 
 type Props = {
   post: ContentType;
