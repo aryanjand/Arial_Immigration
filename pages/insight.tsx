@@ -26,7 +26,7 @@ export default function Insight({ post }: Props) {
   );
 }
 
-export async function getStaticProps() {
+export const getServerSideProps = async () => {
   const immigrationNews = await news.search(
     'Positive Canadian Immigration News (CIC)',
     {
@@ -44,4 +44,4 @@ export async function getStaticProps() {
   return {
     props: { post },
   };
-}
+};
