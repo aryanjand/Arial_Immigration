@@ -5,7 +5,7 @@ import CoverImage from '../public/assets/images/hero/hero-insight.png';
 import InsightCard from '../components/insight/insight-card';
 import { INSIGHT_HEADING } from '../lib/constants';
 import MetaInsight from '../components/meta/meta-insight';
-const news = require('gnews');
+import { news } from 'gnews';
 
 type Props = {
   post: ContentType;
@@ -26,7 +26,7 @@ export default function Insight({ post }: Props) {
   );
 }
 
-export async function getStaticProps() {
+export const getServerSideProps = async () => {
   const immigrationNews = await news.search(
     'Positive Canadian Immigration News (CIC)',
     {
@@ -44,4 +44,4 @@ export async function getStaticProps() {
   return {
     props: { post },
   };
-}
+};
