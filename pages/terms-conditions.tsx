@@ -1,10 +1,12 @@
 import React from 'react';
 import Layout from '../components/app/layout';
 import { COMPANY_NAME } from '../lib/constants';
+import Meta from '../components/meta/meta';
 
-const TermsAndConditions: React.FC = () => {
+const TermsAndConditions = () => {
   return (
     <Layout>
+      <Meta />
       <div className="p-8 font-sans bg-gray-50 text-gray-800">
         <h1 className="text-3xl font-bold mb-6">
           Terms and Conditions for Submitting an Inquiry
@@ -15,7 +17,7 @@ const TermsAndConditions: React.FC = () => {
         </h2>
         <p className="mb-4">
           By submitting an inquiry to{' '}
-          <span className="font-medium">[Agency Name]</span> ("we," "us,"
+          <span className="font-medium"> {COMPANY_NAME}</span> ("we," "us,"
           "our"), you agree to these terms and conditions. If you do not agree,
           please refrain from submitting an inquiry.
         </p>

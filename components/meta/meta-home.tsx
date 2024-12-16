@@ -74,7 +74,7 @@ const MetaHome = () => {
             description: `${COMPANY_NAME} offers expert immigration consulting services to help you navigate the complexities of immigration processes with ease and confidence.`,
             contactPoint: {
               '@type': 'ContactPoint',
-              telephone: `${process.env.PHONE_NUMBER}`,
+              telephone: `+1-604-368-6092`,
               contactType: 'Customer Service',
             },
             areaServed: 'Canada',

@@ -1,10 +1,11 @@
 import Image from 'next/image';
-import ContentType from '../../interfaces/content-type';
+import { ContentType } from '../../interfaces/content';
 import cn from 'classnames';
 
 type Props = {
   content: ContentType;
 };
+
 // Used in the about-us page
 const AboutUsBody = ({ content }: Props) => {
   return (

@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import ContentType from '../../interfaces/content-type';
 import cn from 'classnames';
 import useScreenSize from '../../hooks/useScreenSize';
+import { ContentType } from '../../interfaces/content';
 
 type Props = {
   content: ContentType;

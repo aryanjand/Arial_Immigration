@@ -1,6 +1,5 @@
 import PostHeader from '../components/shared/page-hero-content/post-header';
 import Layout from '../components/app/layout';
-import type ContentType from '../interfaces/content-type';
 import CoverImage from '../public/assets/images/hero/hero-services.png';
 import study_image from '../public/assets/images/services/study.png';
 import vist_image from '../public/assets/images/services/vistor-visa.png';
@@ -10,18 +9,19 @@ import citizenship_image from '../public/assets/images/services/citizenship.png'
 import express_image from '../public/assets/images/services/express-entry.png';
 import ServiceBody from '../components/services/service-body';
 import MetaServices from '../components/meta/meta-services';
+import { ContentType } from '../interfaces/content';
 
 type Props = {
-  post: ContentType;
+  content: ContentType;
 };
 
-export default function Service({ post }: Props) {
+export default function Service({ content }: Props) {
   return (
     <Layout>
       <MetaServices />
       <article className="mb-32">
-        <PostHeader title={post.title} coverImage={post.coverImage} />
-        {post.content.map((c, index) => (
+        <PostHeader title={content.title} coverImage={content.coverImage} />
+        {content.content.map((c, index) => (
           <ServiceBody key={c.coverImage} content={c} index={index} />
         ))}
       </article>
@@ -72,7 +72,7 @@ export async function getStaticProps() {
     },
   ];
 
-  const post = {
+  const pageContent = {
     title: 'Services',
     coverImage: CoverImage,
     content: content,
@@ -80,6 +80,6 @@ export async function getStaticProps() {
   };
 
   return {
-    props: { post },
+    props: { content: pageContent },
   };
 }
