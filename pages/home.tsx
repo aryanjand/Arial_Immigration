@@ -1,38 +1,49 @@
-import Services from '../components/home/services/services';
 import HeroPost from '../components/home/hero-post';
 import Layout from '../components/app/layout';
-import Post from '../interfaces/content-type';
 import heroImage from '../public/assets/images/hero/hero-maple-leaf.png';
 import work_image from '../public/assets/images/services/work-hero.png';
 import study_image from '../public/assets/images/services/study-hero.png';
 import sponsor_image from '../public/assets/images/services/sponsor.png';
-import HeaderLink from '../interfaces/headerlink';
 import ContactUs from '../components/home/contact-us/contact-us';
 import SectionSeparator from '../components/shared/section-separator';
 import MetaHome from '../components/meta/meta-home';
+import { HeaderNavLink } from '../interfaces/header-nav-link';
+import { ContentType } from '../interfaces/content';
+import ServicesPreview from '../components/home/services/services-preview';
+import { OUR_SERVICES_HEADING } from '../lib/constants';
 
 type Props = {
-  allPosts: Post[];
-  headerLinks: HeaderLink[];
+  content: ContentType[];
+  headerLinks: HeaderNavLink[];
 };
 
 // This is the main page of the website
-const Home = ({ allPosts }: Props) => {
-  const heroPost = allPosts[0];
-  const morePosts = allPosts;
+const Home = ({ content }: Props) => {
+  const heroContent = content[0];
+  const servicesContent = content.slice(1);
   return (
     <Layout>
       <MetaHome />
-      {heroPost && (
+      {heroContent && (
         <HeroPost
-          title={heroPost.title}
-          coverImage={heroPost.coverImage}
-          description={heroPost.description}
+          title={heroContent.title}
+          coverImage={heroContent.coverImage}
+          description={heroContent.description}
         />
       )}
-      {morePosts.length > 0 && (
-        <Services posts={morePosts.slice(1, morePosts.length)} />
-      )}
+      <section>
+        <h2 className="mb-8 text-3xl font-bold">{OUR_SERVICES_HEADING}</h2>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-20 gap-x-10 mb-32">
+          {servicesContent.map((post) => (
+            <ServicesPreview
+              key={post.title}
+              title={post.title}
+              coverImage={post.coverImage}
+              description={post.description}
+            />
+          ))}
+        </div>
+      </section>
       <SectionSeparator />
       <ContactUs />
     </Layout>
@@ -40,7 +51,7 @@ const Home = ({ allPosts }: Props) => {
 };
 
 export const getStaticProps = () => {
-  const allPosts = [
+  const contentSections = [
     {
       title: 'Unlock the doors to new horizons',
       coverImage: heroImage,
@@ -72,7 +83,7 @@ export const getStaticProps = () => {
   ];
 
   return {
-    props: { allPosts },
+    props: { content: contentSections },
   };
 };
 

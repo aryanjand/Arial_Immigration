@@ -1,23 +1,23 @@
 import AboutUsBody from '../components/about-us/about-us-body';
 import PostHeader from '../components/shared/page-hero-content/post-header';
 import Layout from '../components/app/layout';
-import type ContentType from '../interfaces/content-type';
 import CoverImage from '../public/assets/images/hero/hero-about-us.png';
 import rcic_cric from '../public/assets/images/certifications/rcic-cric.png';
 import MetaAboutUs from '../components/meta/meta-about-us';
+import { ContentType } from '../interfaces/content';
 
 type Props = {
-  post: ContentType;
+  content: ContentType;
 };
 
-const AboutUs = ({ post }: Props) => {
+const AboutUs = ({ content }: Props) => {
   return (
     <Layout>
       <MetaAboutUs />
-      <PostHeader title={post.title} coverImage={post.coverImage} />
+      <PostHeader title={content.title} coverImage={content.coverImage} />
       <article className="mb-32">
-        {post.content.map((c) => (
-          <AboutUsBody content={c} />
+        {content.content.map((c) => (
+          <AboutUsBody key={c.title} content={c} />
         ))}
       </article>
     </Layout>
@@ -26,6 +26,7 @@ const AboutUs = ({ post }: Props) => {
 
 export async function getStaticProps() {
   const content = [
+    // Top section
     {
       title: `Embark on a Journey of New Beginnings`,
       description: `As a proud member of the ICCRC (Immigration Consultants of Canada Regulatory Council), Arial Immigration is dedicated to providing genuine, transparent consultation services. We uphold the highest standards of integrity in all our dealings.
@@ -36,12 +37,14 @@ export async function getStaticProps() {
       At Arial Immigration, customer satisfaction is not just a goal, it's our promise. We address every query with a deep understanding of your emotional and financial considerations.
       Our consultancy is built on the pillars of honesty, consistency, and strict client confidentiality, making us a trusted partner in your immigration journey.`,
     },
+    // rcic-cric logo
     {
       description: `As ICCRC-certified consultants, we adhere to rigorous standards set by the Canadian government to regulate immigration, citizenship, and international student advising services.
       Our role includes enforcing the Code of Professional Ethics, accrediting Immigration Practitioner Programs, administering Full Skills Exams, delivering Practice Management Education, and ensuring continual professional development.
       Trust Arial Immigration to guide you through every step of your immigration process with expertise and care.`,
       coverImage: rcic_cric,
     },
+    // Values
     {
       title: `Values`,
     },
@@ -67,7 +70,7 @@ export async function getStaticProps() {
     },
   ];
 
-  const post = {
+  const pageContent = {
     title: 'About us',
     coverImage: CoverImage,
     content: content,
@@ -75,7 +78,9 @@ export async function getStaticProps() {
   };
 
   return {
-    props: { post },
+    props: {
+      content: pageContent,
+    },
   };
 }
 

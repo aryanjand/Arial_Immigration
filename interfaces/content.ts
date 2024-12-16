@@ -1,6 +1,6 @@
-import NewsType from "./news";
+import { NewsType } from './news';
 
-type ContentType = {
+export type ContentType = {
   title?: string;
   heading?: string;
   subHeading?: string;
@@ -9,5 +9,3 @@ type ContentType = {
   content?: ContentType[];
   newsContent?: NewsType[];
 };
-
-export default ContentType;

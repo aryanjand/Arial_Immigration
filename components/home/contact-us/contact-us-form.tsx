@@ -3,10 +3,10 @@ import {
   ContactFormSchemaType,
   ContactFormSchema,
 } from '../../../interfaces/schema/contact-form-schema';
-import { useEmailJSMutation } from '../../../hooks/useEmailJSMutation';
 import { useFormik } from 'formik';
 import { withZodSchema } from 'formik-validator-zod';
 import { FormValues } from '../../../interfaces/form-values';
+import { useEmailJSMutation } from '../../../lib/hooks/useEmailJSMutation';
 
 export const ContactUsForm = () => {
   const sentEmailMutation = useEmailJSMutation();
@@ -178,7 +178,7 @@ export const ContactUsForm = () => {
 
       <button
         type="submit"
-        className="bg-black text-white py-3 px-6 rounded-md h-15"
+        className="bg-black text-white py-3 px-6 rounded-md h-12"
       >
         {sentEmailMutation.isLoading ? (
           <div className="flex justify-center items-center">

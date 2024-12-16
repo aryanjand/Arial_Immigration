@@ -1,4 +1,5 @@
-import ContentType from '../../../interfaces/content-type';
+import { ContentType } from '../../../interfaces/content';
+import { Icons } from '../../shared/icon';
 
 const ContactUsTags = () => {
   const inputsArray: ContentType[] = [
@@ -21,34 +22,22 @@ const ContactUsTags = () => {
   ];
 
   return (
-    <ul className="space-y-10">
-      {inputsArray.map((input) => (
-        <li
-          key={input.description}
-          className="mt-10 font-medium flex items-center"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 text-gray-600 mr-5"
-            viewBox="0 0 20 20"
-            fill="currentColor"
+    <div className="hidden md:block">
+      <ul className="space-y-10">
+        {inputsArray.map((input) => (
+          <li
+            key={input.description}
+            className="mt-10 font-medium flex items-center"
           >
-            <path
-              d="M10 5l5 5-5 5"
-              stroke="currentColor"
-              strokeWidth="2"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          <span>
-            <span className="text-xl mb-2">{input.heading}</span>
-            <p className="font-light text-lg">{input.description}</p>
-          </span>
-        </li>
-      ))}
-    </ul>
+            <Icons.RightArrowHead />
+            <span>
+              <span className="text-xl mb-2">{input.heading}</span>
+              <p className="font-light text-lg">{input.description}</p>
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

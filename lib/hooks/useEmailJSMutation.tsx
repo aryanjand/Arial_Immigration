@@ -1,6 +1,6 @@
 import emailjs from '@emailjs/browser';
 import { useMutation } from '@tanstack/react-query';
-import { FormValues } from '../interfaces/form-values';
+import { FormValues } from '../../interfaces/form-values';
 
 export const useEmailJSMutation = () => {
   return useMutation((formElement: FormValues) => {

@@ -1,4 +1,4 @@
-type NewsType = {
+export type NewsType = {
   title: string;
   link: string;
   pubDate: string;
@@ -7,5 +7,3 @@ type NewsType = {
   guid: string;
   isoDate: string;
 };
-
-export default NewsType;

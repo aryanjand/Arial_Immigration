@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import rcic from '../../public/assets/images/certifications/rcic-cicc-capic-accpi.png';
+import { ExternalLinks } from '../../lib/external-links';
 
 const Footer = () => {
   return (
@@ -14,54 +14,46 @@ const Footer = () => {
         </div>
         <div>
           <h3 className="font-bold">Important Links</h3>
-          <Link
-            href={
-              'https://college-ic.ca/protecting-the-public/find-an-immigration-consultant'
-            }
+          <a
+            href={ExternalLinks.verifyRCIC}
             target="true"
             className="hover:underline block"
           >
             Verify RCIC
-          </Link>
-          <Link
-            href={
-              'https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/submit-profile.html'
-            }
+          </a>
+          <a
+            href={ExternalLinks.CRSScore}
             target="true"
             className="hover:underline block"
           >
             Latest CRS Score
-          </Link>
-          <Link
-            href={
-              'https://ircc.canada.ca/english/immigrate/skilled/crs-tool.asp'
-            }
+          </a>
+          <a
+            href={ExternalLinks.CRSCalculator}
             target="true"
             className="hover:underline block"
           >
             CRS Calculator
-          </Link>
-          <Link
-            href={
-              'https://www.canada.ca/en/immigration-refugees-citizenship/services/application/check-processing-times.html'
-            }
+          </a>
+          <a
+            href={ExternalLinks.processingTime}
             target="true"
             className="hover:underline block"
           >
             Check Processing Time
-          </Link>
+          </a>
         </div>
         <div>
           <h3 className="font-bold">Contact Us</h3>
-          <Link href={`tel:+1-604-368-6092`} className="hover:underline block">
+          <a href={`tel:+1-604-368-6092`} className="hover:underline block">
             +1-604-368-6092
-          </Link>
-          <Link
+          </a>
+          <a
             href={`mailto:arialimmagtion@gmail.com`}
             className="hover:underline block"
           >
             arialimmagtion@gmail.com
-          </Link>
+          </a>
         </div>
         <Image src={rcic} alt={`Image for rcic logo`} width={350} />
       </div>
