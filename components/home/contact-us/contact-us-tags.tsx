@@ -21,7 +21,7 @@ const ContactUsTags = () => {
   ];
 
   return (
-    <ul className="space-y-6">
+    <ul className="space-y-10">
       {inputsArray.map((input) => (
         <li
           key={input.description}

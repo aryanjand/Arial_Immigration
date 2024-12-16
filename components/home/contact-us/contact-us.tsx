@@ -8,7 +8,7 @@ const ContactUs = () => {
       <h3 className="mb-4 text-2xl lg:text-4xl leading-tight">
         Let's Talk Business
       </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 mx-5 gap-x-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 mx-5 gap-x-20 items-center">
         <div className="hidden md:block">
           <ContactUsTags />
         </div>
