@@ -6,6 +6,7 @@ import {
 import { useEmailJSMutation } from '../../../hooks/useEmailJSMutation';
 import { useFormik } from 'formik';
 import { withZodSchema } from 'formik-validator-zod';
+import { FormValues } from '../../../interfaces/form-values';
 
 export const ContactUsForm = () => {
   const sentEmailMutation = useEmailJSMutation();
