@@ -4,12 +4,27 @@ module.exports = {
     SITE_URL:
       process.env.NEXT_PUBLIC_SITE_URL ||
       process.env.SITE_URL ||
-      (process.env.VERCEL_PROJECT_PRODUCTION_URL
-        ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-        : ''),
+      'https://www.arialimmigration.ca',
+  },
+  async rewrites() {
+    return [
+      { source: '/sitemap.xml', destination: '/api/sitemap' },
+      { source: '/robots.txt', destination: '/api/robots' },
+    ];
   },
   async headers() {
     return [
+      {
+        source: '/sitemap.xml',
+        headers: [
+          { key: 'Content-Type', value: 'text/xml; charset=utf-8' },
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+        ],
+      },
+      {
+        source: '/robots.txt',
+        headers: [{ key: 'Content-Type', value: 'text/plain; charset=utf-8' }],
+      },
       {
         source: '/:path*',
         headers: [

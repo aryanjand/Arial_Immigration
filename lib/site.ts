@@ -1,11 +1,13 @@
 import { COMPANY_NAME } from './constants';
 
+export const DEFAULT_SITE_URL = 'https://www.arialimmigration.ca';
+
 const rawSiteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ||
   process.env.SITE_URL ||
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : 'http://localhost:8080');
+  (process.env.NODE_ENV === 'development'
+    ? 'http://localhost:8080'
+    : DEFAULT_SITE_URL);
 
 export const SITE_URL = rawSiteUrl.replace(/\/home\/?$/, '').replace(/\/$/, '');
 
@@ -28,14 +30,28 @@ export const CONSULTING_SERVICES = [
   { value: 'sponsorship', label: 'Sponsorship' },
 ] as const;
 
-export const sitePath = (path: string) =>
-  `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`;
+export const INDEXABLE_PATHS = [
+  '/',
+  '/about-us',
+  '/services',
+  '/insight',
+  '/contact',
+  '/privacy-policy',
+  '/terms-conditions',
+] as const;
+
+export const sitePath = (path: string) => {
+  if (path === '/') {
+    return `${SITE_URL}/`;
+  }
+  return `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`;
+};
 
 export const organizationJsonLd = () => ({
   '@context': 'https://schema.org',
   '@type': ['ProfessionalService', 'LocalBusiness', 'Organization'],
   name: COMPANY_NAME,
-  url: SITE_URL,
+  url: `${SITE_URL}/`,
   logo: sitePath('/assets/images/logo/logo.png'),
   image: sitePath('/assets/images/hero/hero-maple-leaf.png'),
   description: COMPANY_DESCRIPTION,

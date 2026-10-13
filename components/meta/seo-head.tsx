@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { COMPANY_NAME } from '../../lib/constants';
-import { SITE_URL, sitePath } from '../../lib/site';
+import { DEFAULT_SITE_URL, sitePath } from '../../lib/site';
 
 type JsonLd = Record<string, unknown> | Record<string, unknown>[];
 
@@ -84,7 +84,7 @@ const SeoHead = ({
       <link
         rel="sitemap"
         type="application/xml"
-        href={`${SITE_URL}/sitemap.xml`}
+        href={`${DEFAULT_SITE_URL}/sitemap.xml`}
       />
     </Head>
   );
