@@ -17,7 +17,10 @@ const AboutUs = ({ content }: Props) => {
       <PostHeader title={content.title} coverImage={content.coverImage} />
       <article className="mb-32">
         {content.content.map((c) => (
-          <AboutUsBody key={c.title} content={c} />
+          <AboutUsBody
+            key={c.subHeading || c.title || c.description}
+            content={c}
+          />
         ))}
       </article>
     </Layout>

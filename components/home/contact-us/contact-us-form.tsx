@@ -7,6 +7,7 @@ import { useFormik } from 'formik';
 import { withZodSchema } from 'formik-validator-zod';
 import { FormValues } from '../../../interfaces/form-values';
 import { useEmailJSMutation } from '../../../lib/hooks/useEmailJSMutation';
+import { COMPANY_EMAIL } from '../../../lib/site';
 
 export const ContactUsForm = () => {
   const sentEmailMutation = useEmailJSMutation();
@@ -61,10 +62,10 @@ export const ContactUsForm = () => {
         <p className="text-red-600">
           Oops, an error occurred. Please try again later, or contact us at{' '}
           <a
-            href="mailto:arialimmigration@gmail.com"
+            href={`mailto:${COMPANY_EMAIL}`}
             className="text-blue-600 hover:underline"
           >
-            arialimmigration@gmail.com
+            {COMPANY_EMAIL}
           </a>
           .
         </p>
@@ -128,7 +129,6 @@ export const ContactUsForm = () => {
         <select
           name="selected_service"
           className="border p-3 rounded-md w-full"
-          defaultValue=""
           {...formik.getFieldProps('selected_service')}
         >
           <option value="" disabled>

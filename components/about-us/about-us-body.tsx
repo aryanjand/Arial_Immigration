@@ -18,25 +18,38 @@ const AboutUsBody = ({ content }: Props) => {
         })}
       >
         {content.title ? (
-          <h2 className="text-4xl font-light">{content.title}</h2>
+          <h2 className="text-3xl md:text-4xl font-light">{content.title}</h2>
         ) : (
-          <h4 className="font-bold underline mt-3">{content.subHeading}</h4>
+          content.subHeading && (
+            <h3 className="font-bold underline mt-3">{content.subHeading}</h3>
+          )
         )}
 
         <div
-          className={`grid ${
-            content.coverImage ? 'grid-cols-3' : 'grid-cols-1'
-          } items-center gap-4`}
+          className={cn(
+            'grid grid-cols-1 items-center gap-4',
+            content.coverImage && 'md:grid-cols-3'
+          )}
         >
           {content.coverImage && (
             <Image
               src={content.coverImage}
-              alt={content.title}
+              alt={content.title || 'Arial Immigration certification'}
               width={300}
               height={630}
+              className="w-full max-w-[220px] h-auto mx-auto md:mx-0"
             />
           )}
-          <p className="self-center col-span-2">{content.description}</p>
+          {content.description && (
+            <p
+              className={cn(
+                'self-center',
+                content.coverImage && 'md:col-span-2'
+              )}
+            >
+              {content.description}
+            </p>
+          )}
         </div>
       </div>
     </>

@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import cn from 'classnames';
-import useScreenSize from '../../hooks/useScreenSize';
 import { ContentType } from '../../interfaces/content';
 
 type Props = {
@@ -9,71 +8,54 @@ type Props = {
 };
 
 const ServiceBody = ({ content, index }: Props) => {
-  const screenSize = useScreenSize();
-  return (
-    <>
-      <div
-        className={cn('max-w-6xl', 'mx-auto', 'grid grid-flow-row', {
-          'gap-5 mt-10': content.title,
-          'my-5': screenSize.width < 768,
-        })}
-      >
-        {content.title && (
-          <h2 className="text-4xl font-light">{content.title}</h2>
-        )}
+  const imageFirstOnDesktop = index % 2 === 0 && Boolean(content.coverImage);
 
-        <div
+  return (
+    <div
+      className={cn('max-w-6xl mx-auto grid grid-flow-row', {
+        'gap-5 mt-10': content.title,
+        'my-5': !content.title,
+      })}
+    >
+      {content.title && (
+        <h2 className="text-3xl md:text-4xl font-light">{content.title}</h2>
+      )}
+
+      <div
+        className={cn(
+          'grid grid-cols-1 items-center gap-4',
+          content.coverImage && 'md:grid-cols-2'
+        )}
+      >
+        <article
           className={cn(
-            'grid',
-            content.coverImage && screenSize.width >= 768
-              ? 'grid-cols-2'
-              : 'grid-cols-1', // add content.coverImage && screenSize <= 768px
-            'items-center',
-            'gap-4'
+            'flex flex-col gap-3',
+            imageFirstOnDesktop ? 'md:order-2' : 'md:order-1'
           )}
         >
-          {index % 2 === 0 && screenSize.width >= 768 ? ( // add screenSize <= 768px
-            <>
-              {content.coverImage && (
-                <Image
-                  className={cn(
-                    'hover:shadow-lg',
-                    'transition-shadow',
-                    'duration-200'
-                  )}
-                  src={content.coverImage}
-                  alt={content.title}
-                  width={600}
-                />
-              )}
-              <article className="flex flex-col gap-3">
-                <h4 className="font-bold text-lg underline">
-                  {content.subHeading}
-                </h4>
-                <p className="self-center">{content.description}</p>
-              </article>
-            </>
-          ) : (
-            <>
-              <article className="flex flex-col gap-3">
-                <h4 className="font-bold text-lg underline">
-                  {content.subHeading}
-                </h4>
-                <p className="self-center">{content.description}</p>
-              </article>
-              {content.coverImage && (
-                <Image
-                  className={'hover:shadow-lg transition-shadow duration-200'}
-                  src={content.coverImage}
-                  alt={content.title}
-                  width={600}
-                />
-              )}
-            </>
+          {content.subHeading && (
+            <h3 className="font-bold text-lg underline">
+              {content.subHeading}
+            </h3>
           )}
-        </div>
+          {content.description && (
+            <p className="self-start md:self-center">{content.description}</p>
+          )}
+        </article>
+        {content.coverImage && (
+          <Image
+            className={cn(
+              'hover:shadow-lg transition-shadow duration-200 w-full h-auto',
+              imageFirstOnDesktop ? 'md:order-1' : 'md:order-2'
+            )}
+            src={content.coverImage}
+            alt={content.subHeading || content.title || 'Service'}
+            width={600}
+            height={400}
+          />
+        )}
       </div>
-    </>
+    </div>
   );
 };
 

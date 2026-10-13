@@ -2,6 +2,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { COMPANY_NAME } from '../../lib/constants';
 import Footer from './footer';
 import Header from './header';
+import MobileContactBar from './mobile-contact-bar';
 
 type Props = {
   preview?: boolean;
@@ -26,19 +27,24 @@ const Layout = ({ children }: Props) => {
       title: 'Insight',
       path: '/insight',
     },
+    {
+      title: 'Contact',
+      path: '/contact',
+    },
   ];
   return (
     <>
       <SpeedInsights />
       <div className="min-h-screen">
         <main>
-          <div className="container mx-auto px-5 my-20">
+          <div className="container mx-auto px-5 py-8 md:py-20 pb-24 lg:pb-20">
             <Header headerLinks={headerLinks} />
             {children}
           </div>
         </main>
       </div>
       <Footer />
+      <MobileContactBar />
     </>
   );
 };

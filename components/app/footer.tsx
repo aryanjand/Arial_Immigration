@@ -1,61 +1,85 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import rcic from '../../public/assets/images/certifications/rcic-cicc-capic-accpi.png';
 import { ExternalLinks } from '../../lib/external-links';
+import {
+  COMPANY_EMAIL,
+  COMPANY_PHONE,
+  COMPANY_PHONE_DISPLAY,
+} from '../../lib/site';
 
 const Footer = () => {
   return (
-    <footer className="bg-neutral-50 border-t border-neutral-200">
-      <div className="py-16 lg:py-28 grid md:grid-cols-2 lg:grid-cols-4 justify-center items-start gap-5 container mx-auto px-5">
+    <footer className="bg-neutral-50 border-t border-neutral-200 pb-20 lg:pb-0">
+      <div className="py-12 lg:py-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-center items-start gap-8 container mx-auto px-5">
         <div>
-          <h3 className="font-bold">Accreditation</h3>
+          <h3 className="font-bold mb-2">Accreditation</h3>
           <p>Regulated Canadian Immigration Consultant (RCIC)</p>
-          <p> Member in good standing of ICCRC</p>
-          <p> Member of the CAPIC</p>
+          <p>Member in good standing of ICCRC</p>
+          <p>Member of the CAPIC</p>
         </div>
         <div>
-          <h3 className="font-bold">Important Links</h3>
+          <h3 className="font-bold mb-2">Important Links</h3>
           <a
             href={ExternalLinks.verifyRCIC}
-            target="true"
-            className="hover:underline block"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline block py-1"
           >
             Verify RCIC
           </a>
           <a
             href={ExternalLinks.CRSScore}
-            target="true"
-            className="hover:underline block"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline block py-1"
           >
             Latest CRS Score
           </a>
           <a
             href={ExternalLinks.CRSCalculator}
-            target="true"
-            className="hover:underline block"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline block py-1"
           >
             CRS Calculator
           </a>
           <a
             href={ExternalLinks.processingTime}
-            target="true"
-            className="hover:underline block"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline block py-1"
           >
             Check Processing Time
           </a>
         </div>
         <div>
-          <h3 className="font-bold">Contact Us</h3>
-          <a href={`tel:+1-604-368-6092`} className="hover:underline block">
-            +1-604-368-6092
+          <h3 className="font-bold mb-2">Contact Us</h3>
+          <a
+            href={`tel:${COMPANY_PHONE}`}
+            className="hover:underline block py-1"
+          >
+            {COMPANY_PHONE_DISPLAY}
           </a>
           <a
-            href={`mailto:arialimmagtion@gmail.com`}
-            className="hover:underline block"
+            href={`mailto:${COMPANY_EMAIL}`}
+            className="hover:underline block py-1 break-all"
           >
-            arialimmagtion@gmail.com
+            {COMPANY_EMAIL}
           </a>
+          <Link href="/services" className="hover:underline block py-1">
+            Our Services
+          </Link>
+          <Link href="/contact" className="hover:underline block py-1">
+            Send an inquiry
+          </Link>
         </div>
-        <Image src={rcic} alt={`Image for rcic logo`} width={350} />
+        <Image
+          src={rcic}
+          alt="RCIC, CICC, and CAPIC accreditation logos"
+          width={350}
+          className="w-full max-w-xs h-auto"
+        />
       </div>
     </footer>
   );

@@ -22,7 +22,11 @@ export default function Service({ content }: Props) {
       <article className="mb-32">
         <PostHeader title={content.title} coverImage={content.coverImage} />
         {content.content.map((c, index) => (
-          <ServiceBody key={c.coverImage} content={c} index={index} />
+          <ServiceBody
+            key={c.subHeading || c.title || `section-${index}`}
+            content={c}
+            index={index}
+          />
         ))}
       </article>
     </Layout>

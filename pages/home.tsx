@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import HeroPost from '../components/home/hero-post';
 import Layout from '../components/app/layout';
 import heroImage from '../public/assets/images/hero/hero-maple-leaf.png';
@@ -32,8 +33,16 @@ const Home = ({ content }: Props) => {
         />
       )}
       <section>
-        <h2 className="mb-8 text-3xl font-bold">{OUR_SERVICES_HEADING}</h2>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-20 gap-x-10 mb-32">
+        <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <h2 className="text-3xl font-bold">{OUR_SERVICES_HEADING}</h2>
+          <Link
+            href="/services"
+            className="text-base underline underline-offset-4 hover:no-underline"
+          >
+            View all services
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-12 md:gap-y-20 gap-x-10 mb-16 md:mb-32">
           {servicesContent.map((post) => (
             <ServicesPreview
               key={post.title}

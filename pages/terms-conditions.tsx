@@ -1,14 +1,20 @@
 import React from 'react';
 import Layout from '../components/app/layout';
 import { COMPANY_NAME } from '../lib/constants';
+import { COMPANY_EMAIL } from '../lib/site';
 import Meta from '../components/meta/meta';
 
 const TermsAndConditions = () => {
   return (
     <Layout>
-      <Meta />
-      <div className="p-8 font-sans bg-gray-50 text-gray-800">
-        <h1 className="text-3xl font-bold mb-6">
+      <Meta
+        title="Terms and Conditions"
+        description={`Terms and conditions for submitting an inquiry to ${COMPANY_NAME}.`}
+        path="/terms-conditions"
+        noIndex={false}
+      />
+      <div className="p-4 sm:p-8 font-sans bg-gray-50 text-gray-800">
+        <h1 className="text-2xl sm:text-3xl font-bold mb-6">
           Terms and Conditions for Submitting an Inquiry
         </h1>
 
@@ -48,11 +54,11 @@ const TermsAndConditions = () => {
           For any questions regarding these terms and conditions, please contact
           us at
           <a
-            href="mailto:arialimmigration@gmail.com"
+            href={`mailto:${COMPANY_EMAIL}`}
             className="text-blue-600 hover:underline"
           >
             {' '}
-            arialimmigration@gmail.com
+            {COMPANY_EMAIL}
           </a>
           .
         </p>
