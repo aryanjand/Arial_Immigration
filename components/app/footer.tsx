@@ -8,7 +8,6 @@ import {
   COMPANY_PHONE_DISPLAY,
   CONSULTANT_NAME,
   RCIC_LICENCE_NUMBER,
-  REGULATOR_NAME,
 } from '../../lib/site';
 
 const Footer = () => {
@@ -17,12 +16,11 @@ const Footer = () => {
       <div className="py-12 lg:py-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-center items-start gap-8 container mx-auto px-5">
         <div>
           <h3 className="font-bold mb-2">Accreditation</h3>
-          <p>Regulated Canadian Immigration Consultant (RCIC)</p>
           <p>
-            {CONSULTANT_NAME}
+            {CONSULTANT_NAME}, RCIC
             {RCIC_LICENCE_NUMBER ? ` · College ID ${RCIC_LICENCE_NUMBER}` : ''}
+            {' · Licensed by CICC'}
           </p>
-          <p>Licensed by the {REGULATOR_NAME}</p>
           <p>Member of CAPIC</p>
         </div>
         <div>
