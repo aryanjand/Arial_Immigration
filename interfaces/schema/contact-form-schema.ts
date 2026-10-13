@@ -1,4 +1,10 @@
 import { z } from 'zod';
+import { CONSULTING_SERVICES } from '../../lib/site';
+
+const serviceValues = CONSULTING_SERVICES.map((service) => service.value) as [
+  string,
+  ...string[],
+];
 
 export const ContactFormSchema = z.object({
   customer_name: z.string().min(3, 'Name is required (Min 3 Characters).'),
@@ -9,8 +15,14 @@ export const ContactFormSchema = z.object({
       /^(\+?\d{1,4}[-.\s]?)?(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{3,4}$/,
       'Invalid phone number.'
     ),
-  selected_service: z.string().min(1, 'Please select a service.'),
+  selected_service: z
+    .string()
+    .min(1, 'Please select a service.')
+    .refine((value) => serviceValues.includes(value), {
+      message: 'Please select a service.',
+    }),
   message: z.string().optional(),
+  website: z.string().optional(),
   terms: z.literal(true, {
     errorMap: () => ({
       message: 'You must agree to the terms and conditions.',

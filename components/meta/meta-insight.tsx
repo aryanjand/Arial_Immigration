@@ -12,7 +12,7 @@ const MetaInsight = () => {
       jsonLd={[
         organizationJsonLd(),
         breadcrumbJsonLd([
-          { name: 'Home', path: '/home' },
+          { name: 'Home', path: '/' },
           { name: 'Insight', path: '/insight' },
         ]),
         {

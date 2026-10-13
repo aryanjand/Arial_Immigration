@@ -39,7 +39,7 @@ export async function getStaticProps() {
       description: `At Arial Immigration, we prioritize exceptional service quality and client satisfaction. Our expert team provides tailored guidance in Canadian immigration law, ensuring a strong success record through meticulous case handling.`,
     },
     {
-      description: `As ICCRC members, we uphold ethical standards and stay updated on immigration policies to offer effective advice. We are your trusted partner in achieving your Canadian dream, committed to transparency and reliability.`,
+      description: `As CICC-licensed consultants, we uphold the College's professional standards and stay updated on immigration policies to offer effective advice. We are your trusted partner in achieving your Canadian dream, committed to transparency and reliability.`,
     },
     {
       title: `Our Services`,

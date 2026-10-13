@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRef, useState } from 'react';
 import {
   ContactFormSchemaType,
   ContactFormSchema,
@@ -7,10 +8,15 @@ import { useFormik } from 'formik';
 import { withZodSchema } from 'formik-validator-zod';
 import { FormValues } from '../../../interfaces/form-values';
 import { useEmailJSMutation } from '../../../lib/hooks/useEmailJSMutation';
-import { COMPANY_EMAIL } from '../../../lib/site';
+import { COMPANY_EMAIL, CONSULTING_SERVICES } from '../../../lib/site';
+
+const SUBMIT_COOLDOWN_MS = 60_000;
+const MIN_FILL_MS = 2000;
 
 export const ContactUsForm = () => {
   const sentEmailMutation = useEmailJSMutation();
+  const startedAt = useRef(Date.now());
+  const [isBotSubmission, setIsBotSubmission] = useState(false);
 
   const formik = useFormik<ContactFormSchemaType>({
     initialValues: {
@@ -19,11 +25,32 @@ export const ContactUsForm = () => {
       customer_phone_number: '',
       selected_service: '',
       message: '',
+      website: '',
       // @ts-ignore
       terms: false,
     },
     validate: withZodSchema(ContactFormSchema),
     onSubmit: (values) => {
+      if (values.website) {
+        setIsBotSubmission(true);
+        return;
+      }
+
+      const lastSubmit = Number(
+        window.sessionStorage.getItem('contact-submit-at') || 0
+      );
+      if (Date.now() - lastSubmit < SUBMIT_COOLDOWN_MS) {
+        formik.setStatus(
+          'Please wait a minute before sending another inquiry.'
+        );
+        return;
+      }
+
+      if (Date.now() - startedAt.current < MIN_FILL_MS) {
+        formik.setStatus('Please take a moment to complete the form.');
+        return;
+      }
+
       try {
         const formValues: FormValues = {
           customer_name: values.customer_name,
@@ -35,7 +62,13 @@ export const ContactUsForm = () => {
         };
 
         sentEmailMutation.mutate(formValues, {
-          onSuccess: () => formik.resetForm(),
+          onSuccess: () => {
+            window.sessionStorage.setItem(
+              'contact-submit-at',
+              String(Date.now())
+            );
+            formik.resetForm();
+          },
           onError: (error) => {
             console.error('Email mutation failed:', error);
           },
@@ -46,7 +79,7 @@ export const ContactUsForm = () => {
     },
   });
 
-  if (sentEmailMutation.isSuccess) {
+  if (sentEmailMutation.isSuccess || isBotSubmission) {
     return (
       <div className="bg-grey-100 border border-grey-300 p-4 rounded-md">
         <p className="font-medium">
@@ -79,8 +112,26 @@ export const ContactUsForm = () => {
         Fill in the form, so we can contact you and start our journey together.
       </p>
 
-      <div className="w-full ">
+      <div
+        className="absolute -left-[9999px] h-0 w-0 overflow-hidden"
+        aria-hidden="true"
+      >
+        <label htmlFor="website">Company website</label>
         <input
+          id="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          {...formik.getFieldProps('website')}
+        />
+      </div>
+
+      <div className="w-full">
+        <label htmlFor="customer_name" className="sr-only">
+          Name
+        </label>
+        <input
+          id="customer_name"
           type="text"
           name="customer_name"
           placeholder="Name (Required)"
@@ -95,7 +146,11 @@ export const ContactUsForm = () => {
       </div>
 
       <div className="w-full">
+        <label htmlFor="customer_email" className="sr-only">
+          Email
+        </label>
         <input
+          id="customer_email"
           type="email"
           name="customer_email"
           placeholder="Email (Required)"
@@ -110,7 +165,11 @@ export const ContactUsForm = () => {
       </div>
 
       <div className="w-full">
+        <label htmlFor="customer_phone_number" className="sr-only">
+          Phone number
+        </label>
         <input
+          id="customer_phone_number"
           type="tel"
           name="customer_phone_number"
           placeholder="Phone Number (Required)"
@@ -126,7 +185,11 @@ export const ContactUsForm = () => {
       </div>
 
       <div className="w-full">
+        <label htmlFor="selected_service" className="sr-only">
+          Service
+        </label>
         <select
+          id="selected_service"
           name="selected_service"
           className="border p-3 rounded-md w-full"
           {...formik.getFieldProps('selected_service')}
@@ -134,11 +197,11 @@ export const ContactUsForm = () => {
           <option value="" disabled>
             Select a Service (Required)
           </option>
-          <option value="migrate">Migrate</option>
-          <option value="study">Study</option>
-          <option value="business-immigration">Business Immigration</option>
-          <option value="work">Work</option>
-          <option value="visit">Visit</option>
+          {CONSULTING_SERVICES.map((service) => (
+            <option key={service.value} value={service.value}>
+              {service.label}
+            </option>
+          ))}
         </select>
         {formik.errors.selected_service && formik.touched.selected_service && (
           <p className="text-red-500 text-xs mt-1">
@@ -146,7 +209,11 @@ export const ContactUsForm = () => {
           </p>
         )}
       </div>
+      <label htmlFor="message" className="sr-only">
+        Message
+      </label>
       <textarea
+        id="message"
         name="message"
         placeholder="Message"
         className="border h-32 p-3 rounded-md"
@@ -167,6 +234,13 @@ export const ContactUsForm = () => {
               className="hover:underline text-blue-600"
             >
               terms and conditions
+            </Link>{' '}
+            and{' '}
+            <Link
+              href="/privacy-policy"
+              className="hover:underline text-blue-600"
+            >
+              privacy policy
             </Link>
             .
           </span>
@@ -176,9 +250,12 @@ export const ContactUsForm = () => {
         )}
       </div>
 
+      {formik.status && <p className="text-red-500 text-sm">{formik.status}</p>}
+
       <button
         type="submit"
-        className="bg-black text-white py-3 px-6 rounded-md h-12"
+        disabled={sentEmailMutation.isLoading}
+        className="bg-black text-white py-3 px-6 rounded-md h-12 disabled:opacity-70"
       >
         {sentEmailMutation.isLoading ? (
           <div className="flex justify-center items-center">

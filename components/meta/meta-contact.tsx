@@ -17,7 +17,7 @@ const MetaContact = () => {
       jsonLd={[
         organizationJsonLd(),
         breadcrumbJsonLd([
-          { name: 'Home', path: '/home' },
+          { name: 'Home', path: '/' },
           { name: 'Contact', path: '/contact' },
         ]),
         {

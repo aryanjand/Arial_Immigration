@@ -15,7 +15,7 @@ const Header = ({ headerLinks }: Props) => {
   const { pathname } = useRouter();
 
   const title = headerLinks[0];
-  const isHomePage = pathname === '/home';
+  const isHomePage = pathname === '/';
 
   const toggleNav = () => setIsNavOpen((prev) => !prev);
   const closeNav = () => setIsNavOpen(false);

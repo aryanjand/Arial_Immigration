@@ -11,7 +11,7 @@ const MetaHome = () => {
     <SeoHead
       title={`${COMPANY_NAME} | Canadian Immigration Consultants`}
       description={COMPANY_DESCRIPTION}
-      path="/home"
+      path="/"
       image="/assets/images/hero/hero-maple-leaf.png"
       jsonLd={[
         organizationJsonLd(),

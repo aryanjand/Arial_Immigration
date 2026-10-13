@@ -32,8 +32,8 @@ export async function getStaticProps() {
     // Top section
     {
       title: `Embark on a Journey of New Beginnings`,
-      description: `As a proud member of the ICCRC (Immigration Consultants of Canada Regulatory Council), Arial Immigration is dedicated to providing genuine, transparent consultation services. We uphold the highest standards of integrity in all our dealings.
-      Guided by our esteemed Managing Director, Mr. Yashpal Jand, a Regulated Canadian Immigration Consultant (RCIC), we ensure our clients are always updated with the latest immigration laws and procedures.`,
+      description: `As a licensee of the College of Immigration and Citizenship Consultants (CICC), Arial Immigration is dedicated to providing genuine, transparent consultation services. We uphold the highest standards of integrity in all our dealings.
+      Guided by our Managing Director, Mr. Yashpal Jand, a Regulated Canadian Immigration Consultant (RCIC), we ensure our clients are always updated with the latest immigration laws and procedures.`,
     },
     {
       description: `Our commitment to your journey is reflected in our comprehensive support, from initial profile assessment to offering tailored solutions that enhance your career prospects.
@@ -42,8 +42,7 @@ export async function getStaticProps() {
     },
     // rcic-cric logo
     {
-      description: `As ICCRC-certified consultants, we adhere to rigorous standards set by the Canadian government to regulate immigration, citizenship, and international student advising services.
-      Our role includes enforcing the Code of Professional Ethics, accrediting Immigration Practitioner Programs, administering Full Skills Exams, delivering Practice Management Education, and ensuring continual professional development.
+      description: `As CICC-licensed consultants, we follow the College's Code of Professional Conduct and stay current through continuing professional development required of Regulated Canadian Immigration Consultants.
       Trust Arial Immigration to guide you through every step of your immigration process with expertise and care.`,
       coverImage: rcic_cric,
     },

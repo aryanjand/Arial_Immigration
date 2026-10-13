@@ -18,7 +18,6 @@ type Props = {
   headerLinks: HeaderNavLink[];
 };
 
-// This is the main page of the website
 const Home = ({ content }: Props) => {
   const heroContent = content[0];
   const servicesContent = content.slice(1);

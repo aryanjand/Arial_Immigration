@@ -12,7 +12,7 @@ const MetaServices = () => {
       jsonLd={[
         organizationJsonLd(),
         breadcrumbJsonLd([
-          { name: 'Home', path: '/home' },
+          { name: 'Home', path: '/' },
           { name: 'Services', path: '/services' },
         ]),
         {

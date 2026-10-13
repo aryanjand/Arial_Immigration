@@ -6,6 +6,9 @@ import {
   COMPANY_EMAIL,
   COMPANY_PHONE,
   COMPANY_PHONE_DISPLAY,
+  CONSULTANT_NAME,
+  RCIC_LICENCE_NUMBER,
+  REGULATOR_NAME,
 } from '../../lib/site';
 
 const Footer = () => {
@@ -15,8 +18,12 @@ const Footer = () => {
         <div>
           <h3 className="font-bold mb-2">Accreditation</h3>
           <p>Regulated Canadian Immigration Consultant (RCIC)</p>
-          <p>Member in good standing of ICCRC</p>
-          <p>Member of the CAPIC</p>
+          <p>
+            {CONSULTANT_NAME}
+            {RCIC_LICENCE_NUMBER ? ` · College ID ${RCIC_LICENCE_NUMBER}` : ''}
+          </p>
+          <p>Licensed by the {REGULATOR_NAME}</p>
+          <p>Member of CAPIC</p>
         </div>
         <div>
           <h3 className="font-bold mb-2">Important Links</h3>
@@ -26,7 +33,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="hover:underline block py-1"
           >
-            Verify RCIC
+            Verify this RCIC
           </a>
           <a
             href={ExternalLinks.CRSScore}
@@ -72,6 +79,12 @@ const Footer = () => {
           </Link>
           <Link href="/contact" className="hover:underline block py-1">
             Send an inquiry
+          </Link>
+          <Link href="/privacy-policy" className="hover:underline block py-1">
+            Privacy Policy
+          </Link>
+          <Link href="/terms-conditions" className="hover:underline block py-1">
+            Terms and Conditions
           </Link>
         </div>
         <Image

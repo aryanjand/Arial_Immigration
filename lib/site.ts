@@ -13,6 +13,20 @@ export const COMPANY_PHONE = '+1-604-368-6092';
 export const COMPANY_PHONE_DISPLAY = '+1 (604) 368-6092';
 export const COMPANY_EMAIL = 'arialimmigration@gmail.com';
 export const COMPANY_DESCRIPTION = `${COMPANY_NAME} offers expert immigration consulting services to help you navigate Canadian immigration with confidence.`;
+export const CONSULTANT_NAME = 'Yashpal Jand';
+export const RCIC_LICENCE_NUMBER = process.env.NEXT_PUBLIC_RCIC_LICENCE || '';
+export const REGULATOR_NAME =
+  'College of Immigration and Citizenship Consultants (CICC)';
+
+export const CONSULTING_SERVICES = [
+  { value: 'study-visa', label: 'Study Visa' },
+  { value: 'visitor-visa', label: 'Visitor Visa' },
+  { value: 'work-visa', label: 'Work Visa' },
+  { value: 'lmia', label: 'LMIA' },
+  { value: 'citizenship', label: 'Citizenship' },
+  { value: 'express-entry', label: 'Express Entry' },
+  { value: 'sponsorship', label: 'Sponsorship' },
+] as const;
 
 export const sitePath = (path: string) =>
   `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`;

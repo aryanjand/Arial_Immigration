@@ -17,8 +17,8 @@ module.exports = {
   exclude: ['/404', '/500'],
   transform: async (config, path) => ({
     loc: path,
-    changefreq: path === '/home' ? 'weekly' : 'monthly',
-    priority: path === '/home' || path === '/' ? 1.0 : 0.7,
+    changefreq: path === '/' ? 'weekly' : 'monthly',
+    priority: path === '/' ? 1.0 : 0.7,
     lastmod: new Date().toISOString(),
   }),
   robotsTxtOptions: {

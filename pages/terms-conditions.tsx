@@ -49,7 +49,17 @@ const TermsAndConditions = () => {
           information provided by you.
         </p>
 
-        <h2 className="text-xl font-semibold mt-4 mb-2">4. Contact Us</h2>
+        <h2 className="text-xl font-semibold mt-4 mb-2">4. Privacy</h2>
+        <p className="mb-4">
+          How we handle the personal information in your inquiry is explained in
+          our{' '}
+          <a href="/privacy-policy" className="text-blue-600 hover:underline">
+            privacy policy
+          </a>
+          .
+        </p>
+
+        <h2 className="text-xl font-semibold mt-4 mb-2">5. Contact Us</h2>
         <p className="mb-4">
           For any questions regarding these terms and conditions, please contact
           us at
